@@ -1,13 +1,16 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./views/Dashboard";
-function App(){
-    return(
-        <Router>
-            <Routes>
-                {/* Dashboard */}
-                <Route path="/dahsboard" element={<Dashboard />} />
-            </Routes>
-        </Router>
-    );
-}
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        {/* Tambahkan rute lainnya jika diperlukan */}
+      </Routes>
+    </Router>
+  );
+};
+
 export default App;
