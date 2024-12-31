@@ -9,16 +9,16 @@ const Footer = () => {
           {/* Contact Person */}
           <div className="mb-6 lg:mb-0 w-full lg:w-1/4">
             <h4 className="text-lg font-semibold mb-3">Contact Person</h4>
-            <p className="text-sm">Phone: +62 819 0620 6738</p>
-            <p className="text-sm">Email:shabi.lombok.bersaudara@gmail.com </p>
-            <p className="text-sm">WhatsApp: +62 819 0620 6738</p>
+            <p className="text-sm">Phone: +62 819-0620-6738</p>
+            <p className="text-sm">Email: shabi.lombok.bersaudara@gmail.com</p>
+            <p className="text-sm">WhatsApp: +62 819-0620-6738</p>
           </div>
 
           {/* Address */}
           <div className="mb-6 lg:mb-0 w-full lg:w-1/4">
             <h4 className="text-lg font-semibold mb-3">Alamat</h4>
             <p className="text-sm">
-              Jl. Merdeka No.123, Kota Mataram, NTB 83115, Indonesia
+              Pematung, Sakra Barat, Lombok Timur, Indonesia, Sakra, Indonesia, West Nusa Tenggara
             </p>
           </div>
 
@@ -27,7 +27,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-3">Media Sosial</h4>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/profile.php?id=61556022470859  "
+                href="https://www.facebook.com/profile.php?id=61556022470859"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-500"
@@ -57,8 +57,9 @@ const Footer = () => {
           <div className="w-full lg:w-1/4">
             <h4 className="text-lg font-semibold mb-3">Lokasi</h4>
             <div className="rounded-lg overflow-hidden shadow-md aspect-video">
+              {/* Replaced iframe with the new one */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.0121784968437!2d116.1166644!3d-8.5839589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdbf12df5bfcd1%3A0x7a1c6c4b9c8c9ef1!2sUniversitas%20Mataram!5e0!3m2!1sen!2sid!4v1695746464693!5m2!1sen!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d492.92987893686654!2d116.47190881427215!3d-8.744695946807676!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1735634703840!5m2!1sen!2sid"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
