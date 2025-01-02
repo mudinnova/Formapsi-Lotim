@@ -62,16 +62,10 @@ const Manager = () => {
             <Navbar />
             <div className="relative flex-grow">
                 {/* Full-screen background */}
-                {/* <div
-                    className="absolute inset-0 bg-cover bg-center opacity-20 w-full h-full"
-                    style={{
-                        backgroundImage: `url('/13[1].png')`,
-                        backgroundSize: 'cover', // Menjamin gambar menutupi seluruh area
-                        backgroundPosition: 'center', // Memastikan gambar berada di tengah
-                        backgroundRepeat: 'no-repeat', // Mencegah gambar diulang
-                        height: '100vh', // Pastikan elemen memenuhi seluruh tinggi layar
-                    }}
-                /> */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center opacity-20 w-1/2"
+                    style={{ backgroundImage: `url('/bg3.jpg')`,  }}
+                />
                 <div className="relative z-10 my-12">
                     <h2 className="text-4xl font-bold text-center font-primary text-yellow-500 mb-4 pt-4">
                         STRUKTUR ORGANISASI PERUSAHAAN
@@ -118,6 +112,7 @@ const Manager = () => {
                     </motion.div>
                 </div>
             </div>
+            
             <Footer />
         </div>
     );

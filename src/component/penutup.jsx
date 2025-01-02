@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -49,6 +49,14 @@ const Footer = () => {
                 className="hover:text-blue-700"
               >
                 <FaEnvelope size={24} />
+              </a>
+              <a
+                href="https://mail.google.com/mail/u/4/#inbox"
+                target="Gmail"
+                rel="noopener noreferrer"
+                className="hover:text-blue-700"
+              >
+                <FaWhatsapp size={24} />
               </a>
             </div>
           </div>

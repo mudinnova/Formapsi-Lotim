@@ -9,8 +9,8 @@ const Company = () => {
             <div className="relative flex-grow">
                 {/* Full-screen background */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center opacity-10 w-full"
-                    style={{ backgroundImage: `url('/background.jpg')`,  }}
+                    className="absolute inset-0 bg-cover bg-center opacity-10 w-1/2"
+                    style={{ backgroundImage: `url('/bg4.jpg')`,  }}
                 />
                 <div className="flex justify-center items-center pt-10 pb-9 relative ">
                     <div className="bg-white p-5 rounded-lg shadow-lg w-1/2">
