@@ -6,7 +6,7 @@ const images = [
   '/activities1.jpg',
   '/activities2.jpg',
   '/activities3.jpg',
-  '/activities4.jpg',
+  // '/activities4.jpg',
   '/activities5.jpg',
   '/activities6.jpg',
   '/activities7.jpg',

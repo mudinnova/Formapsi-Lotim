@@ -1,6 +1,10 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
+const phoneNumber = "6283825948215"; // Ganti dengan nomor perusahaan
+const message = "Halo, saya ingin bertanya seputaran dengan proses pendaftaran!";
+const whatsappLink = `https://wa.me/${6283825948215}?text=${encodeURIComponent(message)}`;
+
 const Footer = () => {
   return (
     <div className="">
@@ -9,9 +13,9 @@ const Footer = () => {
           {/* Contact Person */}
           <div className="mb-6 lg:mb-0 w-full lg:w-1/4">
             <h4 className="text-lg font-semibold mb-3">Contact Person</h4>
-            <p className="text-sm">Phone: +62 819-0620-6738</p>
+            <p className="text-sm">Phone: +62 838-2594-8215</p>
             <p className="text-sm">Email: shabi.lombok.bersaudara@gmail.com</p>
-            <p className="text-sm">WhatsApp: +62 819-0620-6738</p>
+            <p className="text-sm">WhatsApp: +62 838-2594-8215</p>
           </div>
 
           {/* Address */}
@@ -35,7 +39,7 @@ const Footer = () => {
                 <FaFacebook size={24} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/pt_shabi.lombok.bersaudara?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-pink-500"
@@ -51,8 +55,8 @@ const Footer = () => {
                 <FaEnvelope size={24} />
               </a>
               <a
-                href="https://mail.google.com/mail/u/4/#inbox"
-                target="Gmail"
+                href={whatsappLink}
+                target="WhatsApp"
                 rel="noopener noreferrer"
                 className="hover:text-blue-700"
               >

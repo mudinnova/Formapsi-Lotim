@@ -169,13 +169,13 @@ const Navbar = () => {
                 onClick={() => navigate('/ourservice/kerjsama')}
                 className="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors duration-200 w-full text-left"
               >
-                Kerja Sama
+                Collaboration
               </button>
               <button
                 onClick={() => navigate('/ourservice/negara')}
                 className="block px-4 py-2 text-black hover:bg-yellow-500 hover:text-white transition-colors duration-200 w-full text-left"
               >
-                Negara
+                Country
               </button>
             </div>
           )}

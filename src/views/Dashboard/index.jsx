@@ -58,24 +58,26 @@ const Dashboard = () => {
             </h3>
           </div>
           <div className="flex flex-col md:flex-row mt-6">
-            <img
-              src="/perusahaan.jpg"
-              alt="Company Overview"
-              className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0"
-            />
-            <div className="md:pl-6 font-secondary font-medium text-justify">
-              <p>
-                PT. Shabi Lombok Bersaudara in Montong Perapen, Bungtiang
-                Village/Subdistrict, West Sakra District, East Lombok Regency,
-                West Nusa Tenggara Province, is an Indonesian TKI Placement
-                Company that places TKI Abroad in both the Formal and Informal
-                sectors with Placement Destination Countries namely Poland,
-                Australia, Japan, Taiwan, Malaysia, and Singapore. Our expertise
-                ensures candidates are matched with suitable placements through
-                integrity, productivity, trust, and excellence.
-              </p>
-            </div>
-          </div>
+  <video
+    src="/video/shabi.mp4"
+    autoPlay
+    loop
+    className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0"
+  />
+  <div className="md:pl-6 font-secondary font-medium text-justify">
+    <p>
+      PT. Shabi Lombok Bersaudara in Montong Perapen, Bungtiang
+      Village/Subdistrict, West Sakra District, East Lombok Regency,
+      West Nusa Tenggara Province, is an Indonesian TKI Placement
+      Company that places TKI Abroad in both the Formal and Informal
+      sectors with Placement Destination Countries namely Poland,
+      Australia, Japan, Taiwan, Malaysia, and Singapore. Our expertise
+      ensures candidates are matched with suitable placements through
+      integrity, productivity, trust, and excellence.
+    </p>
+  </div>
+</div>
+
           <div className="flex justify-end mt-4">
             <button
               className="bg-yellow-500 rounded-md px-6 py-2 hover:bg-yellow-900"

@@ -5,55 +5,66 @@ import { motion } from 'framer-motion';
 
 const positions = [
     {
-        title: "Direktur Utama",
-        imgSrc: "/dirut.jpg", // Ganti dengan path gambar Anda
-        description: "Pemimpin perusahaan dan bertanggung jawab atas keseluruhan operasi."
+        title: "PRECIDENT DIRECTOR",
+        imgSrc: "/manager/asrianto.jpg", // Ganti dengan path gambar Anda
+        description: "Asrianto"
     },
     {
-        title: "Komisaris Utama",
-        imgSrc: "/manager.jpg", // Ganti dengan path gambar Anda
-        description: "Bertanggung jawab untuk manajemen keuangan perusahaan."
+        title: "PRECIDENT COMMISSIONER",
+        imgSrc: "/manager/komut.jpg", // Ganti dengan path gambar Anda
+        description: "Zulita Maehartin"
     },
     {
-        title: "Direktur",
-        imgSrc: "/manager2.jpg", // Ganti dengan path gambar Anda
-        description: "Mengelola catatan keuangan dan laporan keuangan perusahaan."
+        title: "DIRECTOR",
+        imgSrc: "/manager/rodii.jpg", // Ganti dengan path gambar Anda
+        description: "Rodi Wardana"
     },
     {
-        title: "Komisaris",
-        imgSrc: "/manager3.jpg", // Ganti dengan path gambar Anda
-        description: "Bertanggung jawab atas kepatuhan pajak perusahaan."
+        title: "COMMISSIONER",
+        imgSrc: "/manager/mursall.jpg", // Ganti dengan path gambar Anda
+        description: "Mursal"
     },
     {
-        title: "Manager Keuangan",
-        imgSrc: "/manager4.jpg", // Ganti dengan path gambar Anda
-        description: "Mengawasi semua kegiatan operasional di perusahaan."
+        title: "FINANCE MANAGER",
+        imgSrc: "/manager/rodiw.jpg", // Ganti dengan path gambar Anda
+        description: "Zul Fitriani Tri Maehartin  "
     },
     {
-        title: "Manager SDM",
-        imgSrc: "/manager5.jpg", // Ganti dengan path gambar Anda
-        description: "Mengelola proses produksi dan efisiensi bagi perusahaan."
+        title: "HUMAN RESOURCE MANAGER",
+        imgSrc: "/manager/khaliq.jpg", // Ganti dengan path gambar Anda
+        description: "Rafiul Khaliq"
     },
     {
-        title: "Manager Pemasaran",
-        imgSrc: "/manager6.jpg", // Ganti dengan path gambar Anda
-        description: "Bertanggung jawab untuk distribusi produk perusahaan."
+        title: "MARKETING MANAGER",
+        imgSrc: "/manager/Karti.jpg", // Ganti dengan path gambar Anda
+        description: "Karti"
     },
     {
-        title: "Direktur Pemasaran",
-        imgSrc: "/manager7.jpg", // Ganti dengan path gambar Anda
-        description: "Mengelola strategi pemasaran perusahaan."
+        title: "ADMINISTRATOR",
+        imgSrc: "/manager/novaa.jpg", // Ganti dengan path gambar Anda
+        description: "Muhamad Halimudin Nova"
     },
     {
-        title: "Manajer Pemasaran",
-        imgSrc: "/manager8.jpg", // Ganti dengan path gambar Anda
-        description: "Bertanggung jawab atas kampanye pemasaran."
+        title: "ADMINISTRATOR",
+        imgSrc: "/manager/ikaaa.jpg", // Ganti dengan path gambar Anda
+        description: "Monika MayaDiana Putri"
     },
     {
-        title: "Manajer Penjualan",
-        imgSrc: "/manager9.jpg", // Ganti dengan path gambar Anda
-        description: "Mengelola tim penjualan dan hubungan pelanggan."
-    }
+        title: "ADMINISTRATOR",
+        imgSrc: "/manager/sulamiyah.jpg", // Ganti dengan path gambar Anda
+        description: "Baiq Sullamiyah"
+    },
+    {
+        title: "MARKETING DIVISION",
+        imgSrc: "/manager/SALEHHh.jpg", // Ganti dengan path gambar Anda
+        description: "Muhammad Saleh"
+    },
+    {
+        title: "INTERNATIONAL JOB AFFAIR",
+        imgSrc: "/manager/faridd.jpg", // Ganti dengan path gambar Anda
+        description: "Farid"
+    }   
+    
 ];
 
 const Manager = () => {
@@ -63,12 +74,12 @@ const Manager = () => {
             <div className="relative flex-grow">
                 {/* Full-screen background */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center opacity-20 w-1/2"
+                    className="absolute inset-0 bg-cover bg-center opacity-10"
                     style={{ backgroundImage: `url('/bg3.jpg')`,  }}
                 />
                 <div className="relative z-10 my-12">
                     <h2 className="text-4xl font-bold text-center font-primary text-yellow-500 mb-4 pt-4">
-                        STRUKTUR ORGANISASI PERUSAHAAN
+                        COMPANY ORGANIZATIONALY STRUCTURE
                     </h2>
 
                     {/* Direktur Utama section */}
@@ -94,7 +105,7 @@ const Manager = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 mt-4"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-24 mt-4"
                     >
                         {positions.slice(1).map((position, index) => (
                             <div key={index} className="flex flex-col items-center">
