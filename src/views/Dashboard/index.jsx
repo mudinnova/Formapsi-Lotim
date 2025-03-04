@@ -4,9 +4,10 @@ import Gallery from "../../component/galeri";
 import OurService from "../../component/ourservice";
 import Footer from "../../component/penutup";
 import { useNavigate } from "react-router-dom";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { MdOutlineAccessTime } from "react-icons/md";
 
 const Dashboard = () => {
-  // Animasi untuk framer-motion
   const navigate = useNavigate();
   const fadeInVariant = {
     hidden: { opacity: 0, y: 50 },
@@ -18,84 +19,120 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full z-50">
       {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
       <div className="relative flex-grow flex flex-col items-center justify-center">
-        <div className="w-full max-w-[1300px] h-full rounded-xl overflow-hidden relative mt-6">
+        <div className="w-full h-[560px] overflow-hidden relative">
           {/* Gradient Overlay */}
           <div className="bg-gradient-to-b from-black to-black opacity-70 absolute inset-0"></div>
+
           {/* Background Image */}
           <img
-            src="/bg.jpg"
+            src="/web2/gam1.jpg"
             alt="PT. Shabi Lombok Bersaudara Background"
-            className="object-cover w-full h-48 md:h-72 lg:h-96"
+            className="object-cover w-full h-full"
           />
-          {/* Title */}
-          <h1 className="text-white text-xl md:text-2xl lg:text-5xl font-primary-Poppins font-extrabold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20">
-            PT. Shabi Lombok Bersaudara
+
+          {/* Text Container */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-3">
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-primary-Poppins font-extrabold">
+              WELCOME
+            </h1>
+            <h1 className="text-yellow-500 text-2xl md:text-4xl lg:text-5xl font-primary-Poppins font-extrabold">
+              PT. SHABI LOMBOK BERSAUDARA
+            </h1>
+            <h2 className="text-white text-lg md:text-xl lg:text-2xl font-medium font-primary">
+              Perusahaan Penempatan Pekerja Migran Indonesia (P3MI)
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      {/* Jam Operasional */}
+      <div className="flex flex-col items-center justify-center px-4 mt-10">
+        <div className="max-w-lg w-full bg-white shadow-lg rounded-lg p-6 md:p-8">
+          <h1 className="text-2xl font-bold text-center text-amber-500">
+            Jam Operasional
           </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div className="flex items-center space-x-2 text-amber-500 font-medium">
+              <FaRegCalendarAlt />
+              <span>Senin - Jumat</span>
+            </div>
+            <div className="flex items-center space-x-2 text-amber-500 font-medium">
+              <MdOutlineAccessTime />
+              <span>08.00 - 16.00 WITA</span>
+            </div>
+            <div className="flex items-center space-x-2 text-amber-500 font-medium">
+              <FaRegCalendarAlt />
+              <span>Sabtu</span>
+            </div>
+            <div className="flex items-center space-x-2 text-amber-500 font-medium">
+              <MdOutlineAccessTime />
+              <span>08.00 - 12.00 WITA</span>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* About Us Section */}
       <motion.div
-        className="flex justify-center mt-10"
+        className="flex justify-center mt-16"
         variants={fadeInVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="bg-gray-100 max-w-[1200px] shadow-lg rounded-lg p-6">
-          <div className="text-center">
-            <h2 className="text-yellow-500 font-primary font-bold text-2xl mb-2">
-              About Us
-            </h2>
-            <h3 className="text-black font-primary font-bold text-4xl">
-              PT. Shabi Lombok Bersaudara
-            </h3>
+        <section className="flex flex-col md:flex-row items-center justify-center px-6 py-12 bg-white space-y-8 md:space-y-0 md:space-x-12">
+          {/* Bagian Kiri - Gambar */}
+          <div className="relative w-full md:w-1/2 flex justify-center">
+            <div className="relative w-[200px] md:w-[300px] lg:w-[350px]">
+              <img
+                src="/web2/gam2.jpg"
+                alt="Gedung 1"
+                className="rounded-lg shadow-lg w-full"
+              />
+              <img
+                src="/web2/gam3.jpg"
+                alt="Gedung 2"
+                className="rounded-lg shadow-lg absolute bottom-[-32px] right-[-40px] w-3/4 border-4 border-white"
+              />
+            </div>
           </div>
-          <div className="flex flex-col md:flex-row mt-6">
-  <video
-    src="/video/shabi.mp4"
-    autoPlay
-    loop
-    className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0"
-  />
-  <div className="md:pl-6 font-secondary font-medium text-justify">
-    <p>
-      PT. Shabi Lombok Bersaudara in Montong Perapen, Bungtiang
-      Village/Subdistrict, West Sakra District, East Lombok Regency,
-      West Nusa Tenggara Province, is an Indonesian TKI Placement
-      Company that places TKI Abroad in both the Formal and Informal
-      sectors with Placement Destination Countries namely Poland,
-      Australia, Japan, Taiwan, Malaysia, and Singapore. Our expertise
-      ensures candidates are matched with suitable placements through
-      integrity, productivity, trust, and excellence.
-    </p>
-  </div>
-</div>
 
-          <div className="flex justify-end mt-4">
-            <button
-              className="bg-yellow-500 rounded-md px-6 py-2 hover:bg-yellow-900"
-              onClick={() => {
-                navigate("/profile/company", { replace: true });
-              }}
-            >
-              <h1 className="text-white font-secondary">More</h1>
+          {/* Bagian Kanan - Teks */}
+          <div className="w-full md:w-1/2">
+            <h2 className="text-black text-xl md:text-2xl font-bold">Tentang</h2>
+            <h1 className="text-yellow-500 text-2xl md:text-3xl lg:text-4xl font-extrabold mt-2">
+              PT. SHABI LOMBOK BERSAUDARA
+            </h1>
+            <p className="text-gray-700 mt-4 text-sm md:text-base leading-relaxed font-bold font-secondary">
+              PT. Shabi Lombok Bersaudara di Montong Pengen, Bungtiang Village/Subdistrict,
+              West Sakra District, East Lombok Regency, West Nusa Tenggara Province, is an 
+              Indonesian TKI Placement Company that places TKI abroad both in the formal and 
+              informal sectors with Placement Destination Countries namely Poland, Australia, 
+              Japan, Taiwan, Malaysia, and Singapore. Our expertise ensures candidates are 
+              matched with suitable placements through integrity, productivity, trust, and excellence.
+            </p>
+            <button className="mt-6 bg-yellow-500 text-white font-bold px-6 py-2 rounded-lg shadow-lg hover:bg-yellow-600 transition">
+              Selengkapnya
             </button>
           </div>
-
-        </div>
+        </section>
       </motion.div>
 
       {/* Gallery Section */}
-      <Gallery />
-      {/*OurService */}
-      <div className="pb-10"><OurService /></div>
+      <div className="mt-16">
+        <Gallery />
+      </div>
+
+      {/* Our Services */}
+      <div className="mt-16 pb-10">
+        <OurService />
+      </div>
 
       {/* Footer */}
       <Footer />
