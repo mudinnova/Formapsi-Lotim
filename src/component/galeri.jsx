@@ -1,15 +1,25 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from 'react-router-dom';  // Pastikan Anda mengimpor useNavigate dari react-router-dom
+import { useNavigate } from "react-router-dom";
 
 const Gallery = () => {
-   // Array gambar untuk galeri
-    const navigate = useNavigate();  // Hook navigate untuk navigasi
-   const images = [
+  const navigate = useNavigate();
+  const images = [
     "/gambar1.jpg",
     "/gambar2.jpg",
     "/gambar3.jpg",
     "/gambar4.jpg",
+    "/activities1.jpg",
+    "/activities2.jpg",
+    "/activities3.jpg",
+    "/activities6.jpg",
+    "/activities7.jpg",
+    "/activities8.jpg",
+    "/activities9.jpg",
+    "/activities10.jpg",
+    "/activities11.jpg",
+    "/activities12.jpg",
+    "/activities5.jpg",
   ];
 
   const galleryRef = useRef(null);
@@ -18,24 +28,20 @@ const Gallery = () => {
     const gallery = galleryRef.current;
 
     if (gallery) {
-      const scrollStep = 1; // Kecepatan scroll (pixel per langkah)
-      const scrollInterval = 30; // Interval waktu (ms)
+      const scrollStep = 1;
+      const scrollInterval = 30;
 
       const autoScroll = setInterval(() => {
         gallery.scrollLeft += scrollStep;
-
-        // Reset ke awal saat mencapai akhir
         if (gallery.scrollLeft + gallery.offsetWidth >= gallery.scrollWidth) {
           gallery.scrollLeft = 0;
         }
       }, scrollInterval);
 
-      // Membersihkan interval saat komponen di-unmount
       return () => clearInterval(autoScroll);
     }
   }, []);
 
-  // Variabel animasi menggunakan Framer Motion
   const fadeInVariant = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -53,44 +59,37 @@ const Gallery = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="bg-gray-100 h-full max-w-[1200px] shadow-lg rounded-lg">
-        {/* Judul */}
-        <div className="flex flex-col items-center mt-6">
-          <h3 className="text-yellow-500 font-primary font-bold text-4xl">
-            Gallery
-          </h3>
+      <div className="bg-gray-100 h-full max-w-[1200px] shadow-lg rounded-lg p-6">
+        <div className="flex flex-col items-center">
+          <h3 className="text-yellow-500 font-primary font-bold text-4xl">Gallery</h3>
         </div>
-        {/* Galeri */}
         <div
           ref={galleryRef}
-          className="flex flex-row mt-6 mx-4 mb-6 overflow-x-auto whitespace-nowrap scrollbar-hide"
+          className="flex flex-row mt-6 overflow-x-auto whitespace-nowrap scrollbar-hide px-4"
         >
           {images.map((image, index) => (
             <motion.img
               key={index}
               src={image}
               alt={`Gallery image ${index + 1}`}
-              className="rounded-lg w-60 mx-2 shadow-md"
+              className="rounded-lg w-56 h-40 object-cover mx-2 shadow-md"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
             />
           ))}
         </div>
-        <button 
-        className="flex justify-end mb-4 w-full"
-        onClick={() => {
-          navigate("/galeri");
-        }}
-      >
-        <h1 className="text-white font-medium font-secondary rounded-md bg-yellow-500 hover:bg-yellow-900 px-4 py-2 transition-colors">
-          More
-        </h1>
-        </button>
+        <div className="flex justify-end mt-4">
+          <button
+            className="text-white font-medium font-secondary rounded-md bg-yellow-500 hover:bg-yellow-900 px-4 py-2 transition-colors"
+            onClick={() => navigate("/galeri")}
+          >
+            More
+          </button>
+        </div>
       </div>
     </motion.div>
   );
 };
-
 
 export default Gallery;

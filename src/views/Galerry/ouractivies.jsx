@@ -3,10 +3,13 @@ import { motion } from 'framer-motion';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'; // Import ikon panah
 
 const images = [
+  "/gambar1.jpg",
+    "/gambar2.jpg",
+    "/gambar3.jpg",
+    "/gambar4.jpg",
   '/activities1.jpg',
   '/activities2.jpg',
   '/activities3.jpg',
-  // '/activities4.jpg',
   '/activities5.jpg',
   '/activities6.jpg',
   '/activities7.jpg',

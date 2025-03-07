@@ -29,13 +29,31 @@ const GalerryProfile = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <h2 className="text-4xl text-yellow-500 font-bold font-primary flex items-center justify-center pt-4 mb-10">
-        GALLERY
-      </h2>
+      <div className="relative w-full h-48 flex items-center justify-center mt-20">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('/web2/gedung.jpg')` }}
+        ></div>
+
+        {/* Overlay Hitam dengan Opacity */}
+        <div className="absolute inset-0 bg-black opacity-70"></div>
+
+        {/* Content */}
+        <div className="relative text-white text-center px-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-yellow-500 relative inline-block border-l-4 border-yellow-500 pl-4">
+            GALLERY
+          </h1>
+          <p className="text-lg md:text-xl mt-2">
+            TRAINING ACTIVITIES & OUR ACTIVIES
+          </p>
+          <div className="w-80 h-1 bg-white mt-2 mx-auto"></div>
+        </div>
+      </div>
 
       <div className="container mx-auto">
         {/* Bagian "Our Service" */}
-        <div className="bg-gray-100 shadow-2xl mb-10 rounded-lg mx-4">
+        <div className="bg-gray-100 shadow-2xl mb-10 rounded-lg mx-4 mt-9">
           <h2 className="text-3xl font-bold text-center mb-3">Training Activies</h2>
 
           {/* Tombol untuk membuka/mengurangi bagian "Our Service" */}
@@ -50,7 +68,7 @@ const GalerryProfile = () => {
               ) : (
                 <FiChevronDown size={20} className="mr-2" />
               )}
-            
+
             </button>
           </div>
 
@@ -82,7 +100,7 @@ const GalerryProfile = () => {
           </div>
         </div>
       </div>
-      <OurActivies/>
+      <OurActivies />
 
       <Footer />
     </div>

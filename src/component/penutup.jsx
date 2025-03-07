@@ -1,9 +1,9 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
-const phoneNumber = "6283825948215"; // Ganti dengan nomor perusahaan
+const phoneNumber = "6283825948215";
 const message = "Halo, saya ingin bertanya seputaran dengan proses pendaftaran!";
-const whatsappLink = `https://wa.me/${6283825948215}?text=${encodeURIComponent(message)}`;
+const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
 const Footer = () => {
   return (
@@ -22,58 +22,18 @@ const Footer = () => {
           <div className="mb-6 lg:mb-0 w-full lg:w-1/4">
             <h4 className="text-lg font-semibold mb-3">Alamat</h4>
             <p className="text-sm">
-              Pematung, Sakra Barat, Lombok Timur, Indonesia, Sakra, Indonesia, West Nusa Tenggara
+              7FG8+X2H, Rensing, Kec. Sakra Bar., Kabupaten Lombok Timur, Nusa Tenggara Bar. 83671
             </p>
-          </div>
-
-          {/* Social Media */}
-          <div className="mb-6 lg:mb-0 w-full lg:w-1/4">
-            <h4 className="text-lg font-semibold mb-3">Media Sosial</h4>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.facebook.com/profile.php?id=61556022470859"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-500"
-              >
-                <FaFacebook size={24} />
-              </a>
-              <a
-                href="https://www.instagram.com/pt_shabi.lombok.bersaudara?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-pink-500"
-              >
-                <FaInstagram size={24} />
-              </a>
-              <a
-                href="https://mail.google.com/mail/u/4/#inbox"
-                target="Gmail"
-                rel="noopener noreferrer"
-                className="hover:text-blue-700"
-              >
-                <FaEnvelope size={24} />
-              </a>
-              <a
-                href={whatsappLink}
-                target="WhatsApp"
-                rel="noopener noreferrer"
-                className="hover:text-blue-700"
-              >
-                <FaWhatsapp size={24} />
-              </a>
-            </div>
           </div>
 
           {/* Map */}
           <div className="w-full lg:w-1/4">
             <h4 className="text-lg font-semibold mb-3">Lokasi</h4>
             <div className="rounded-lg overflow-hidden shadow-md aspect-video">
-              {/* Replaced iframe with the new one */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d492.92987893686654!2d116.47190881427215!3d-8.744695946807676!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1735634703840!5m2!1sen!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.6730588254286!2d116.4651175!3d-8.7225626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc53c92d4de2af%3A0xace27d71adc99f05!2sPT.%20SHABI%20LOMBOK%20BERSAUDARA!5e0!3m2!1sid!2sid!4v1741245922012!5m2!1sid!2sid"
                 width="100%"
-                height="100%"
+                height="250"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
