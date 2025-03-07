@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { ClipLoader } from "react-spinners";
 import Navbar from "../../component/navbar";
 import Footer from "../../component/penutup";
 
 const Loader = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-white">
-      <ClipLoader color="#facc15" size={50} />
+      <img
+        src="/logoshabi.png"
+        alt="Loading..."
+        className="w-20 h-20 animate-bounce"
+      />
     </div>
   );
 };

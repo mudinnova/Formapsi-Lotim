@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../../component/navbar";
 import Footer from "../../component/penutup";
 import { motion } from "framer-motion";
-import { ClipLoader } from "react-spinners";
+
 
 const positions = [
   { title: "PRESIDENT DIRECTOR", imgSrc: "/manager/asrianto.jpg", description: "Asrianto" },
@@ -21,7 +21,11 @@ const positions = [
 
 const Loader = () => (
   <div className="flex items-center justify-center min-h-screen bg-white">
-    <ClipLoader color="#facc15" size={50} />
+    <img
+        src="/logoshabi.png"
+        alt="Loading..."
+        className="w-20 h-20 animate-bounce"
+      />
   </div>
 );
 

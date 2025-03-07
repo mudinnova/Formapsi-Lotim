@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../../component/navbar';
 import Footer from '../../component/penutup';
@@ -17,8 +17,21 @@ const images = [
   { src: '/taiwan.jpg', country: 'Taiwan', description: 'Taiwan terkenal dengan pasar malamnya dan pemandangan pegunungan.' },
 ];
 
+const Loader = () => (
+  <div className="flex items-center justify-center min-h-screen bg-white">
+    <img src="/logoshabi.png" alt="Loading..." className="w-20 h-20 animate-bounce" />
+  </div>
+);
+
 const Negara = () => {
   const [selectedCountry, setSelectedCountry] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
+
+  if (loading) return <Loader />;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -34,21 +47,23 @@ const Negara = () => {
           <div className="w-72 h-1 bg-white mt-2 mx-auto"></div>
         </div>
       </div>
+
       <h2 className="text-4xl text-yellow-500 font-bold font-primary flex items-center justify-center pt-4 mb-10">
         COUNTRY
       </h2>
+
       <div className="container mx-auto">
         <div className="bg-gray-100 shadow-2xl mb-6 rounded-lg mx-4">
           <div className="relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 ml-2 mr-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
               {images.map((image, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white shadow-md rounded-lg overflow-hidden mb-2 my-8 cursor-pointer"
+                  className="bg-white shadow-md rounded-lg overflow-hidden mb-4 cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   onClick={() => setSelectedCountry(image)}
                 >
-                  <img src={image.src} alt={`Gambar ${index + 1}`} className="w-full h-64 object-cover" />
+                  <img src={image.src} alt={image.country} className="w-full h-64 object-cover" />
                   <div className="text-center py-2 bg-gray-100 text-lg font-medium">
                     {image.country}
                   </div>
@@ -58,20 +73,36 @@ const Negara = () => {
           </div>
         </div>
       </div>
+
       <AnimatePresence>
         {selectedCountry && (
-          <motion.div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <motion.div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center" initial={{ scale: 0.8 }} animate={{ scale: 1 }} exit={{ scale: 0.8 }}>
+          <motion.div 
+            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4" 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+          >
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center" 
+              initial={{ scale: 0.8 }} 
+              animate={{ scale: 1 }} 
+              exit={{ scale: 0.8 }}
+            >
               <h4 className="text-xl font-bold text-yellow-600">{selectedCountry.country}</h4>
               <p className="text-gray-700 mt-2 leading-relaxed">{selectedCountry.description}</p>
               <div className="space-x-4">
-                <button className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md" onClick={() => setSelectedCountry(null)}>Close</button>
-                <button className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md">Open</button>
+                <button 
+                  className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md" 
+                  onClick={() => setSelectedCountry(null)}
+                >
+                  Close
+                </button>
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
       <Footer />
     </div>
   );
