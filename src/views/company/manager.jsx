@@ -41,7 +41,7 @@ const Manager = () => {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/web2/gedung.jpg')" }}></div>
         <div className="absolute inset-0 bg-black opacity-70"></div>
         <div className="relative text-white text-center px-4">
-          <h1 className="text-2xl md:text-3xl font-bold text-yellow-500 border-l-4 border-yellow-500 pl-3">MANAGER</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-yellow-500 relative inline-block border-l-4 border-yellow-500 pl-4">MANAGER</h1>
           <p className="text-md md:text-lg mt-1">COMPANY ORGANIZATIONAL STRUCTURE</p>
           <div className="w-64 h-1 bg-white mt-1 mx-auto"></div>
         </div>
