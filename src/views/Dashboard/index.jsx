@@ -84,20 +84,28 @@ const Dashboard = () => {
             <div className="absolute bottom-[30%] right-[70%] w-36 h-36 md:w-44 md:h-44 border-4 md:border-[5px] border-yellow-500 rounded-full opacity-100"></div>
             <div className="absolute bottom-[70%] right-[-1%] w-44 h-44 md:w-28 md:h-28 border-8 md:border-[12px] border-yellow-500 rounded-full opacity-100"></div>
             <div className="absolute bottom-[-10%] right-[30%] w-16 h-16 md:w-24 md:h-24 border-6 md:border-[10px] border-yellow-500 rounded-full opacity-100"></div>
-            <div className="relative w-[80%] max-w-xs md:max-w-sm lg:max-w-md">
-              <img src="/web2/gam2.jpg" alt="Gedung 1" className="rounded-lg shadow-lg w-full" />
-              <img src="/web2/gam3.jpg" alt="Gedung 2" className="rounded-lg shadow-lg absolute bottom-[15%] right-[-25%] w-2/3 md:w-3/4 border-4 border-white" />
+            <div className="relative w-[100%] max-w-xs md:max-w-sm lg:max-w-md">
+              {/* Video utama */}
+              <video
+                src="/video/shabi.mp4"
+                className="rounded-lg shadow-lg w-full"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
             </div>
+
           </div>
           <div className="w-full md:w-1/2">
             <h2 className="text-black text-xl md:text-2xl font-bold">About Us</h2>
             <h1 className="text-yellow-500 text-2xl md:text-3xl lg:text-4xl font-extrabold mt-2">PT. SHABI LOMBOK BERSAUDARA</h1>
             <p className="text-gray-700 mt-4 text-sm md:text-base leading-relaxed font-bold font-secondary">
-            PT. Shabi Lombok Bersaudara is an Indonesian Migrant Worker Placement Company (P3MI) 
-            that places migrant workers in various destination countries such as the European
-             Union, Australia, Japan, Taiwan, Malaysia, the Maldives, Saudi Arabia, and Singapore. 
-             We are committed to placing candidates in positions that align with integrity, 
-             productivity, trust, and excellence.
+              PT. Shabi Lombok Bersaudara is an Indonesian Migrant Worker Placement Company (P3MI)
+              that places migrant workers in various destination countries such as the European
+              Union, Australia, Japan, Taiwan, Malaysia, the Maldives, Saudi Arabia, and Singapore.
+              We are committed to placing candidates in positions that align with integrity,
+              productivity, trust, and excellence.
             </p>
             <button className="mt-6 bg-yellow-500 text-white font-bold px-6 py-2 rounded-lg shadow-lg hover:bg-yellow-600 transition">More</button>
           </div>
