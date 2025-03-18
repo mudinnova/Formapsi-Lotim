@@ -15,6 +15,8 @@ const images = [
   { src: '/jepang.jpg', country: 'Jepang', description: 'Jepang terkenal dengan teknologi canggih dan budaya tradisionalnya.' },
   { src: '/malay.jpg', country: 'Malaysia', description: 'Malaysia memiliki budaya yang beragam dan kuliner yang lezat.' },
   { src: '/taiwan.jpg', country: 'Taiwan', description: 'Taiwan terkenal dengan pasar malamnya dan pemandangan pegunungan.' },
+  { src: '/arabia.jpg', country: 'Saudi Arabia', description: 'Arab Saudi (Kerajaan Arab Saudi) adalah negara terbesar di Timur Tengah yang terletak di Semenanjung Arab. Negara ini dikenal sebagai pusat agama Islam karena merupakan tempat berdirinya dua kota suci, Mekah dan Madinah.' },
+  { src: '/maldives.jpg', country: 'Maldives', description: 'Maladewa adalah negara kepulauan yang terkenal dengan pantai berpasir putih, air laut yang jernih, dan resor mewah di tengah Samudra Hindia.' },
 ];
 
 const Loader = () => (
@@ -91,6 +93,12 @@ const Negara = () => {
               <h4 className="text-xl font-bold text-yellow-600">{selectedCountry.country}</h4>
               <p className="text-gray-700 mt-2 leading-relaxed">{selectedCountry.description}</p>
               <div className="space-x-4">
+              <button 
+                  className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md" 
+                  onClick={() => setSelectedCountry(null)}
+                >
+                  Open
+                </button>
                 <button 
                   className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md" 
                   onClick={() => setSelectedCountry(null)}
