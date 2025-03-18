@@ -6,16 +6,16 @@ import { motion } from "framer-motion";
 const positions = [
   { title: "PRESIDENT DIRECTOR", imgSrc: "/manager/asrianto.jpg", description: "Asrianto" },
   { title: "PRESIDENT COMMISSIONER", imgSrc: "/manager/komut.jpg", description: "Zulita Maehartin" },
-  { title: "DIRECTOR", imgSrc: "/manager/rodii.jpg", description: "Rodi Wardana" },
-  { title: "COMMISSIONER", imgSrc: "/manager/mursall.jpg", description: "Mursal" },
-  { title: "FINANCE MANAGER", imgSrc: "/manager/rodiw.jpg", description: "Zul Fitriani Tri Maehartin" },
-  { title: "HUMAN RESOURCE MANAGER", imgSrc: "/manager/khaliq.jpg", description: "Rafiul Khaliq" },
+  { title: "DIRECTOR", imgSrc: "/manager/rodi.jpg", description: "Rodi Wardana" },
+  { title: "COMMISSIONER", imgSrc: "/manager/mursal.jpg", description: "Mursal" },
+  { title: "MARKETING DIVISION SRIKANDI", imgSrc: "/manager/anik.jpg", description: "Zul Fitriani Tri Maehartin" },
+  { title: "HUMAN RESOURCE MANAGER", imgSrc: "/manager/firdaus.jpg", description: "Muhammad Firdaus Khutbi" },
+  { title: "FINANCE MANAGER", imgSrc: "/manager/khaliq.jpg", description: "Rafiul Khaliq" },
   { title: "MARKETING MANAGER", imgSrc: "/manager/Karti.jpg", description: "Karti" },
-  { title: "DIVISION IT", imgSrc: "/manager/novaa.jpg", description: "Muhamad Halimudin Nova" },
-  // { title: "ADMINISTRATOR", imgSrc: "/manager/ikaaa.jpg", description: "Monika MayaDiana Putri" },
+  { title: "DIVISION IT", imgSrc: "/manager/nova.jpg", description: "Muhamad Halimudin Nova" },
   // { title: "ADMINISTRATOR", imgSrc: "/manager/sulamiyah.jpg", description: "Baiq Sullamiyah" },
-  { title: "MARKETING DIVISION", imgSrc: "/manager/SALEHHh.jpg", description: "Muhammad Saleh" },
-  { title: "INTERNATIONAL JOB AFFAIR", imgSrc: "/manager/faridd.jpg", description: "Farid" }
+  { title: "MARKETING DIVISION", imgSrc: "/manager/saleh.jpg", description: "Muhammad Saleh" },
+  { title: "INTERNATIONAL JOB AFFAIR", imgSrc: "/manager/farid.jpg", description: "Farid" }
 ];
 
 const Loader = () => (
