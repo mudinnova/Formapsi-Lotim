@@ -1,22 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Navbar from '../../component/navbar';
-import Footer from '../../component/penutup';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import Navbar from "../../component/navbar";
+import Footer from "../../component/penutup";
 
 const images = [
-  { src: '/polandia.jpg', country: 'Polandia', description: 'Polandia adalah negara di Eropa Tengah dengan sejarah yang kaya dan arsitektur klasik.' },
-  { src: '/bulgaria.jpg', country: 'Bulgaria', description: 'Bulgaria adalah negara di Eropa Tenggara yang memiliki sejarah panjang dan budaya yang kuat.' },
-  { src: '/slovakia.jpg', country: 'Slovakia', description: 'Slovakia terkenal dengan kastil abad pertengahan dan pemandangan alamnya yang menakjubkan.' },
-  { src: '/hungaria.jpg', country: 'Hungaria', description: 'Hungaria memiliki ibu kota Budapest, yang dikenal sebagai salah satu kota paling indah di dunia.' },
-  { src: '/portugal.jpg', country: 'Portugal', description: 'Portugal terkenal dengan pantai spektakulernya dan sejarah eksplorasi dunia.' },
-  { src: '/ceko.jpg', country: 'Ceko', description: 'Ceko memiliki Praha, kota dengan arsitektur indah dan sejarah yang kaya.' },
-  { src: '/au.jpg', country: 'Australia', description: 'Australia adalah negara dengan lanskap yang unik dan kota-kota modern.' },
-  { src: '/singapura.jpg', country: 'Singapura', description: 'Singapura adalah pusat bisnis dan pariwisata dengan arsitektur futuristik.' },
-  { src: '/jepang.jpg', country: 'Jepang', description: 'Jepang terkenal dengan teknologi canggih dan budaya tradisionalnya.' },
-  { src: '/malay.jpg', country: 'Malaysia', description: 'Malaysia memiliki budaya yang beragam dan kuliner yang lezat.' },
-  { src: '/taiwan.jpg', country: 'Taiwan', description: 'Taiwan terkenal dengan pasar malamnya dan pemandangan pegunungan.' },
-  { src: '/arabia.jpg', country: 'Saudi Arabia', description: 'Arab Saudi (Kerajaan Arab Saudi) adalah negara terbesar di Timur Tengah yang terletak di Semenanjung Arab. Negara ini dikenal sebagai pusat agama Islam karena merupakan tempat berdirinya dua kota suci, Mekah dan Madinah.' },
-  { src: '/maldives.jpg', country: 'Maldives', description: 'Maladewa adalah negara kepulauan yang terkenal dengan pantai berpasir putih, air laut yang jernih, dan resor mewah di tengah Samudra Hindia.' },
+  { src: "/polandia.jpg", country: "Polandia", description: "Polandia adalah negara di Eropa Tengah dengan sejarah yang kaya dan arsitektur klasik.", path: "/negara/polandia" },
+  { src: "/bulgaria.jpg", country: "Bulgaria", description: "Bulgaria adalah negara di Eropa Tenggara yang memiliki sejarah panjang dan budaya yang kuat.", path: "/negara/bulgaria" },
+  { src: "/slovakia.jpg", country: "Slovakia", description: "Slovakia terkenal dengan kastil abad pertengahan dan pemandangan alamnya yang menakjubkan.", path: "/negara/slovakia" },
+  { src: "/hungaria.jpg", country: "Hungaria", description: "Hungaria memiliki ibu kota Budapest, yang dikenal sebagai salah satu kota paling indah di dunia.", path: "/negara/hungaria" },
+  { src: "/portugal.jpg", country: "Portugal", description: "Portugal terkenal dengan pantai spektakulernya dan sejarah eksplorasi dunia.", path: "/negara/portugal" },
 ];
 
 const Loader = () => (
@@ -26,8 +19,9 @@ const Loader = () => (
 );
 
 const Negara = () => {
-  const [selectedCountry, setSelectedCountry] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [selectedCountry, setSelectedCountry] = useState(null); // State untuk pop-up
+  const navigate = useNavigate(); // Gunakan useNavigate untuk navigasi
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
@@ -63,7 +57,7 @@ const Negara = () => {
                   key={index}
                   className="bg-white shadow-md rounded-lg overflow-hidden mb-4 cursor-pointer"
                   whileHover={{ scale: 1.05 }}
-                  onClick={() => setSelectedCountry(image)}
+                  onClick={() => setSelectedCountry(image)} // Set state untuk pop-up
                 >
                   <img src={image.src} alt={image.country} className="w-full h-64 object-cover" />
                   <div className="text-center py-2 bg-gray-100 text-lg font-medium">
@@ -76,32 +70,33 @@ const Negara = () => {
         </div>
       </div>
 
+      {/* Pop-up Deskripsi Negara */}
       <AnimatePresence>
         {selectedCountry && (
-          <motion.div 
-            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4" 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.div 
-              className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center" 
-              initial={{ scale: 0.8 }} 
-              animate={{ scale: 1 }} 
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
             >
               <h4 className="text-xl font-bold text-yellow-600">{selectedCountry.country}</h4>
               <p className="text-gray-700 mt-2 leading-relaxed">{selectedCountry.description}</p>
-              <div className="space-x-4">
-              <button 
-                  className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md" 
-                  onClick={() => setSelectedCountry(null)}
+              <div className="space-x-4 mt-4">
+                <button
+                  className="bg-yellow-500 text-white px-4 py-2 rounded-md"
+                  onClick={() => navigate("polandia")} // Pindah ke Polandia
                 >
                   Open
                 </button>
-                <button 
-                  className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md" 
-                  onClick={() => setSelectedCountry(null)}
+                <button
+                  className="bg-gray-500 text-white px-4 py-2 rounded-md"
+                  onClick={() => setSelectedCountry(null)} // Tutup pop-up
                 >
                   Close
                 </button>

@@ -6,30 +6,40 @@ const OurService = () => {
   const navigate = useNavigate();
   const [selectedCountry, setSelectedCountry] = useState(null);
   const images = [
-    { 
-      src: "/polandia.jpg", 
+    {
+      src: "/polandia.jpg",
       name: "Polandia",
       description: "Polandia adalah negara di Eropa Tengah yang terkenal dengan sejarahnya yang kaya, arsitektur klasik, serta budaya yang kuat. Ibu kotanya, Warsawa, merupakan pusat ekonomi dan politik dengan banyak gedung pencakar langit modern yang berpadu dengan bangunan bersejarah."
     },
-    { 
-      src: "/bulgaria.jpg", 
+    {
+      src: "/bulgaria.jpg",
       name: "Bulgaria",
       description: "Bulgaria adalah negara di Eropa Tenggara yang memiliki sejarah panjang yang mencakup peradaban Romawi, Kekaisaran Bulgaria, hingga era Ottoman. Sofia, ibu kota Bulgaria, merupakan kota yang dipenuhi dengan bangunan bersejarah, gereja kuno, dan pusat kebudayaan yang berkembang pesat."
     },
-    { 
-      src: "/slovakia.jpg", 
+    {
+      src: "/slovakia.jpg",
       name: "Slovakia",
       description: "Slovakia merupakan negara di Eropa Tengah yang memiliki lanskap alam yang menakjubkan, dengan Pegunungan Carpathian yang membentang di bagian utara. Negara ini terkenal dengan kastil abad pertengahan, seperti Kastil Spiš yang merupakan salah satu kastil terbesar di Eropa."
     },
-    { 
-      src: "/hungaria.jpg", 
+    {
+      src: "/hungaria.jpg",
       name: "Hungaria",
       description: "Hungaria adalah negara yang terletak di Eropa Tengah dengan ibu kota Budapest, yang dikenal sebagai salah satu kota paling indah di dunia. Budapest terkenal dengan Sungai Danube yang membelah kota menjadi dua bagian, Buda dan Pest, serta bangunan ikonik seperti Gedung Parlemen Hungaria."
     },
-    { 
-      src: "/portugal.jpg", 
+    {
+      src: "/portugal.jpg",
       name: "Portugal",
       description: "Portugal adalah negara maritim di Eropa Barat yang dikenal dengan sejarah eksplorasi dunia, pantai yang spektakuler, serta warisan budaya yang kaya. Ibu kotanya, Lisbon, merupakan kota yang penuh dengan bangunan bersejarah, jalanan berbatu yang menawan, serta pemandangan sungai Tagus yang indah."
+    },
+    {
+      src: '/ceko.jpg',
+      name: 'Ceko',
+      description: 'Ceko memiliki Praha, kota dengan arsitektur indah dan sejarah yang kaya.'
+    },
+    {
+      src: '/au.jpg',
+      name: 'Australia',
+      description: 'Australia adalah negara dengan lanskap yang unik dan kota-kota modern.'
     },
   ];
 
@@ -58,12 +68,21 @@ const OurService = () => {
         </div>
         <div ref={galleryRef} className="flex flex-row mt-6 mx-4 mb-6 overflow-x-auto whitespace-nowrap scrollbar-hide w-full">
           {images.map((image, index) => (
-            <div key={index} className="flex flex-col items-center mx-2 w-48 sm:w-60 cursor-pointer border-b pb-4 bg-white rounded-lg shadow-md p-4" onClick={() => setSelectedCountry(image)}>
-              <motion.img src={image.src} alt={`Gallery image of ${image.name}`} className="rounded-lg w-full shadow-md"/>
+            <div
+              key={index}
+              className="flex flex-col items-center mx-2 min-w-[160px] sm:min-w-[180px] md:min-w-[200px] lg:min-w-[220px] cursor-pointer border-b pb-4 bg-white rounded-lg shadow-md p-4"
+              onClick={() => setSelectedCountry(image)}
+            >
+              <motion.img
+                src={image.src}
+                alt={`Gallery image of ${image.name}`}
+                className="rounded-lg shadow-md w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] flex-shrink-0"
+              />
               <p className="text-black font-medium mt-2 text-lg border-b-2 pb-1 w-full text-center">{image.name}</p>
             </div>
           ))}
         </div>
+
         <AnimatePresence>
           {selectedCountry && (
             <motion.div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
@@ -80,7 +99,7 @@ const OurService = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        <button className="flex justify-end mb-4 w-full" onClick={() => navigate("/ourservice/negara") }>
+        <button className="flex justify-end mb-4 w-full" onClick={() => navigate("/ourservice/negara")}>
           <h1 className="text-white mr-6 font-medium font-secondary rounded-md bg-yellow-500 hover:bg-yellow-900 px-4 py-2 transition-colors">More</h1>
         </button>
       </div>
