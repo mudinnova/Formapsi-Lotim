@@ -6,7 +6,7 @@ import Manager from "./views/company/manager";
 import Kerjsama from "./views/Our_Service/Index";
 import Negara from "./views/Our_Service/negara";
 import GalerryProfile from "./views/Galerry";
-import Polandia from "./views/Our_Service/polandia";
+import Polandia from "./views/jobs/polandia";
 
 const App = () => {
   return (

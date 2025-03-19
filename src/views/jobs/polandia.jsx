@@ -89,7 +89,7 @@ const Polandia = () => {
         </p>
         <div className='flex flex-col-3 md:flex-row gap-3 mt-6 justify-center'>
           <div className='bg-white shadow-lg rounded-lg p-6'>
-            <h1 className="text-xl font-bold font-primary underline">Persyaratan</h1>
+            <h1 className="text-xl font-bold font-primary underline flex justify-center">Persyaratan</h1>
             <h2 className=' mt-5 ' >
               <ul className="list-decimal list-outside font-secondary font-medium pl-6">
                 <li>Laki-laki/Perempuan</li>
@@ -101,28 +101,61 @@ const Polandia = () => {
             </h2>
           </div>
           <div className='bg-white shadow-lg rounded-lg p-6'>
-            <h1 className="text-xl font-bold font-primary underline ">Benefit</h1>
+            <h1 className="text-xl font-bold font-primary underline flex justify-center ">Benefit</h1>
             <h2 className=' mt-5 ' >
               <ul className="list-decimal list-outside font-secondary font-medium pl-6">
-                <li>Laki-laki/Perempuan</li>
-                <li>Usia 18-45 Tahun</li>
-                <li>Sehat jasmani dan rohani</li>
-                <li>Kuat Kerja Di Outdoor</li>
+                <li>Gaji Basic 1000 - 1300 USD</li>
+                <li>Fasilitas Tempat Tinggal</li>
+                <li>Asuransi</li>
               </ul>
 
             </h2>
           </div>
           <div className='bg-white shadow-lg rounded-lg p-6'>
-            <h1 className="text-xl font-bold font-primary underline ">Berkas yang Diperlukan</h1>
+            <h1 className="text-xl font-bold font-primary underline flex justify-center ">Berkas yang Diperlukan</h1>
             <h2 className=' mt-5 ' >
               <ul className="list-decimal list-outside font-secondary font-medium pl-6">
-                <li>Laki-laki/Perempuan</li>
-                <li>Usia 18-45 Tahun</li>
-                <li>Sehat jasmani dan rohani</li>
-                <li>Kuat Kerja Di Outdoor</li>
+                <li> Kartu Keluarga Asli</li>
+                <li>FAkta Kelahiran Asli</li>
+                <li>KTP</li>
+                <li> Ijazah Asli</li>
+                <li>Buku Nikah (Bagi yang sudah menikah)</li>
+                <li>Paspor (Jika ada paspor sebelumnya)</li>
+                <li>Surat Izin Keluarga (Bertanda tangan di atas materai dan di buat di kantor desa)</li>
               </ul>
 
             </h2>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row gap-4 mt-6 justify-center">
+          {/* Kolom 1 */}
+          <div className="bg-white shadow-lg rounded-lg p-6 md:w-1/2">
+            <h1 className="text-2xl font-bold text-center text-yellow-500">
+              Biaya Pendaftaran
+            </h1>
+            <h1 className="text-2xl font-bold text-center text-black mt-1">
+              Rp. 35.000.000
+            </h1>
+          </div>
+
+          {/* Kolom 2 */}
+          <div className="bg-white shadow-lg rounded-lg p-6 md:w-1/2">
+            <h1 className="text-2xl font-bold text-center text-yellow-500">
+              Lama Proses
+            </h1>
+            <h1 className="text-2xl font-bold text-center text-black">
+              2 Tahun
+            </h1>
+          </div>
+        </div>
+        <div>
+          <div className=''>
+
+          </div>
+        </div>
+        <div>
+          <div className='bg-white shadow-lg rounded-lg p-6 mt-6'>
+
           </div>
         </div>
       </div>
