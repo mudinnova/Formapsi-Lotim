@@ -5,11 +5,11 @@ import Navbar from "../../component/navbar";
 import Footer from "../../component/penutup";
 
 const images = [
-  { src: "/polandia.jpg", country: "Polandia", description: "Polandia adalah negara di Eropa Tengah dengan sejarah yang kaya dan arsitektur klasik.", path: "/negara/polandia" },
-  { src: "/bulgaria.jpg", country: "Bulgaria", description: "Bulgaria adalah negara di Eropa Tenggara yang memiliki sejarah panjang dan budaya yang kuat.", path: "/negara/bulgaria" },
-  { src: "/slovakia.jpg", country: "Slovakia", description: "Slovakia terkenal dengan kastil abad pertengahan dan pemandangan alamnya yang menakjubkan.", path: "/negara/slovakia" },
-  { src: "/hungaria.jpg", country: "Hungaria", description: "Hungaria memiliki ibu kota Budapest, yang dikenal sebagai salah satu kota paling indah di dunia.", path: "/negara/hungaria" },
-  { src: "/portugal.jpg", country: "Portugal", description: "Portugal terkenal dengan pantai spektakulernya dan sejarah eksplorasi dunia.", path: "/negara/portugal" },
+  { src: "/polandia.jpg", country: "Polandia", description: "Polandia adalah negara di Eropa Tengah dengan sejarah yang kaya dan arsitektur klasik.", path: "/ourservice/negara/polandia" },
+  { src: "/bulgaria.jpg", country: "Bulgaria", description: "Bulgaria adalah negara di Eropa Tenggara yang memiliki sejarah panjang dan budaya yang kuat.", path: "/ourseervice/negara/bulgaria" },
+  { src: "/slovakia.jpg", country: "Slovakia", description: "Slovakia terkenal dengan kastil abad pertengahan dan pemandangan alamnya yang menakjubkan.", path: "/ourservice/negara/slovakia" },
+  { src: "/hungaria.jpg", country: "Hungaria", description: "Hungaria memiliki ibu kota Budapest, yang dikenal sebagai salah satu kota paling indah di dunia.", path: "/ourservice/negara/hungaria" },
+  { src: "/portugal.jpg", country: "Portugal", description: "Portugal terkenal dengan pantai spektakulernya dan sejarah eksplorasi dunia.", path: "/ourservice/negara/portugal" },
 ];
 
 const Loader = () => (
@@ -90,10 +90,11 @@ const Negara = () => {
               <div className="space-x-4 mt-4">
                 <button
                   className="bg-yellow-500 text-white px-4 py-2 rounded-md"
-                  onClick={() => navigate("polandia")} // Pindah ke Polandia
+                  onClick={() => navigate(selectedCountry.path)} // Navigasi ke path yang sesuai
                 >
                   Open
                 </button>
+
                 <button
                   className="bg-gray-500 text-white px-4 py-2 rounded-md"
                   onClick={() => setSelectedCountry(null)} // Tutup pop-up

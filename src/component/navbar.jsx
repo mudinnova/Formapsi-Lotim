@@ -7,6 +7,7 @@ import { IoClose } from 'react-icons/io5';
 import { MdAccountBalance } from 'react-icons/md';
 import { FcCollaboration } from 'react-icons/fc';
 import { useNavigate } from 'react-router-dom';
+import LanguageSwitcher from './translate';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,6 +69,10 @@ const Navbar = () => {
             <RiGalleryView2 />
             <button onClick={() => navigate('/galeri')} className="text-black font-medium hover:text-yellow-500">Gallery</button>
           </div>
+          
+        </div>
+        <div className='flex items-center'>
+          <LanguageSwitcher />
         </div>
       </div>
       
@@ -83,6 +88,7 @@ const Navbar = () => {
         </div>
       )}
 
+       
       {/* Search Button
       <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center">
         {!isSearchOpen ? (

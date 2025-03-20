@@ -7,6 +7,7 @@ import Kerjsama from "./views/Our_Service/Index";
 import Negara from "./views/Our_Service/negara";
 import GalerryProfile from "./views/Galerry";
 import Polandia from "./views/jobs/polandia";
+import Cheko from "./views/jobs/Cheko";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/ourservice/negara" element={<Negara />} />
         <Route path="/galeri" element={<GalerryProfile />} />
         <Route path="/ourservice/negara/polandia" element={<Polandia />} />
+        <Route path="/ourservice/negara/cheko" element={<Cheko />} />
 
         {/* Tambahkan rute lainnya jika diperlukan */}
       </Routes>

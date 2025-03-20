@@ -1,63 +1,56 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 
-const LanguageSelector = ({ onTranslate }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState("en"); // Default English
-  const languages = [
-    { code: "en", name: "English" },
-    { code: "id", name: "Bahasa Indonesia" },
-    { code: "fr", name: "French" },
-    { code: "es", name: "Spanish" },
-    { code: "ja", name: "Japanese" },
-    { code: "zh", name: "Chinese" },
-  ];
+export default function LanguageSwitcher() {
+  const [language, setLanguage] = useState("en");
+  const [loading, setLoading] = useState(false);
 
-  const handleTranslate = async () => {
-    try {
-      const apiKey = "https://translate.googleapis.com/$discovery/rest?version=v3go"; // Ganti dengan API Key Anda
-      const text = "Welcome to our website!";
-      const targetLanguage = selectedLanguage;
+  const handleTranslatePage = async (targetLang) => {
+    setLoading(true);
+    const elements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, a, button");
 
-      const response = await axios.post(
-        `https://translation.googleapis.com/language/translate/v2`,
-        {},
-        {
-          params: {
-            q: text,
-            target: targetLanguage,
-            key: apiKey,
-          },
-        }
-      );
+    for (let el of elements) {
+      const originalText = el.dataset.original || el.innerText;
+      if (!el.dataset.original) el.dataset.original = originalText; // Simpan teks asli
 
-      const translatedText = response.data.data.translations[0].translatedText;
-      onTranslate(translatedText);
-    } catch (error) {
-      console.error("Translation Error:", error);
+      try {
+        const res = await fetch("https://libretranslate.com/translate", {
+          method: "POST",
+          body: JSON.stringify({
+            q: originalText,
+            source: "auto",
+            target: targetLang,
+            format: "text",
+            api_key: "",
+          }),
+          headers: { "Content-Type": "application/json" },
+        });
+
+        const data = await res.json();
+        el.innerText = data.translatedText || originalText;
+      } catch (error) {
+        console.error("Terjemahan gagal", error);
+      }
     }
+    setLoading(false);
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="fixed top-4 right-4 bg-white p-2 rounded-lg shadow-lg">
       <select
-        className="p-2 border border-gray-300 rounded-md"
-        value={selectedLanguage}
-        onChange={(e) => setSelectedLanguage(e.target.value)}
+        className="border p-2 rounded"
+        value={language}
+        onChange={(e) => {
+          setLanguage(e.target.value);
+          handleTranslatePage(e.target.value);
+        }}
+        disabled={loading}
       >
-        {languages.map((lang) => (
-          <option key={lang.code} value={lang.code}>
-            {lang.name}
-          </option>
-        ))}
+        <option value="en">🇬🇧 English</option>
+        <option value="id">🇮🇩 Bahasa Indonesia</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="es">🇪🇸 Español</option>
       </select>
-      <button
-        className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md"
-        onClick={handleTranslate}
-      >
-        Translate
-      </button>
     </div>
   );
-};
-
-export default LanguageSelector;
+}

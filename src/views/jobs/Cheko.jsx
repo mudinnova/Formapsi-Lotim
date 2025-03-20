@@ -10,7 +10,7 @@ const Loader = () => (
   </div>
 );
 
-const Polandia = () => {
+const Cheko = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -210,4 +210,4 @@ const Polandia = () => {
   );
 };
 
-export default Polandia;
+export default Cheko;
