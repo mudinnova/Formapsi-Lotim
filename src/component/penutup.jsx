@@ -8,7 +8,7 @@ const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mes
 const Footer = () => {
   return (
     <div className="">
-      <footer className="bg-yellow-600 text-white py-5">
+      <footer className="bg-yellow-400 text-white py-5">
         <div className="container mx-auto flex flex-col lg:space-y-0 lg:flex-row justify-between items-start lg:items-center">
           {/* Contact Person */}
           <div className="mb-6 lg:mb-0 w-full lg:w-1/4 ">

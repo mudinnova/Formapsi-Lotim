@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-yellow-500 shadow-md px-4 py-2 fixed w-full top-0 left-0 z-50">
+    <nav className="shadow-md px-4 py-2 fixed w-full top-0 left-0 z-50 bg-yellow-400">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center mx-4">
@@ -50,10 +50,10 @@ const Navbar = () => {
               <span>Profile</span>
             </button>
             {openDropdown === 'profile' && (
-              <div className="absolute top-full mt-2 w-40 bg-yellow-500  shadow-lg rounded-md">
+              <div className="absolute top-full mt-2 w-40 bg-yellow-400 shadow-lg rounded-md">
                 <button
                   onClick={() => navigate('/profile/company')}
-                  className="block px-4 py-2 text-black  hover:text-white w-full font-primary text-left transition"
+                  className="block px-4 py-2 text-black hover:text-white w-full font-primary text-left transition"
                 >
                   Company
                 </button>
@@ -70,7 +70,7 @@ const Navbar = () => {
           {/* Our Service */}
           <div className="relative flex flex-col items-center space-y-1">
             <button
-              className="text-black font-primary hover:text-white font-medium  transition-colors flex flex-col items-center"
+              className="text-black font-primary hover:text-white font-medium transition-colors flex flex-col items-center"
               onClick={() =>
                 setOpenDropdown(openDropdown === 'service' ? null : 'service')
               }
@@ -79,7 +79,7 @@ const Navbar = () => {
               <span>Our Service</span>
             </button>
             {openDropdown === 'service' && (
-              <div className="absolute top-full mt-2 w-40 bg-yellow-500 shadow-lg rounded-md">
+              <div className="absolute top-full mt-2 w-40 bg-yellow-400 shadow-lg rounded-md">
                 <button
                   onClick={() => navigate('/ourservice/kerjasama')}
                   className="block px-4 py-2 text-black font-primary hover:text-white w-full text-left transition"
@@ -88,7 +88,7 @@ const Navbar = () => {
                 </button>
                 <button
                   onClick={() => navigate('/ourservice/negara')}
-                  className="block px-4 py-2 text-black font-primary  hover:text-white w-full text-left transition"
+                  className="block px-4 py-2 text-black font-primary hover:text-white w-full text-left transition"
                 >
                   Country
                 </button>
@@ -111,40 +111,40 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden flex flex-col bg-white shadow-md absolute top-full left-0 w-full p-4 z-10">
+        <div className="md:hidden flex flex-col bg-yellow-400 shadow-md absolute top-full left-0 w-full p-4 z-10 border-t border-white">
           <button
             onClick={() => navigate('/')}
-            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+            className="py-2 px-2 text-black hover:text-white rounded-md transition"
           >
             Home
           </button>
           <button
             onClick={() => navigate('/profile/company')}
-            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+            className="py-2 px-2 text-black hover:text-white rounded-md transition"
           >
             Company
           </button>
           <button
             onClick={() => navigate('/profile/manager')}
-            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+            className="py-2 px-2 text-black hover:text-white rounded-md transition"
           >
             Manager
           </button>
           <button
             onClick={() => navigate('/ourservice/kerjasama')}
-            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+            className="py-2 px-2 text-black hover:text-white rounded-md transition"
           >
             Collaboration
           </button>
           <button
             onClick={() => navigate('/ourservice/negara')}
-            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+            className="py-2 px-2 text-black hover:text-white rounded-md transition"
           >
             Country
           </button>
           <button
             onClick={() => navigate('/galeri')}
-            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+            className="py-2 px-2 text-black hover:text-white rounded-md transition"
           >
             Gallery
           </button>
