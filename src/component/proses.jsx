@@ -25,7 +25,7 @@ const ProcessFlow = () => {
             {/* Title */}
             <h2 className="text-yellow-500 font-bold text-lg mt-3">{step.title}</h2>
             {/* Description */}
-            <p className="text-gray-700 text-sm max-w-[140px]">{step.description}</p>
+            <p className="text-white text-sm max-w-[140px]">{step.description}</p>
             {/* Garis Penghubung */}
             {index !== processSteps.length - 1 && (
               <div className="absolute top-8 left-full w-12 h-1 bg-yellow-500 hidden md:block"></div>

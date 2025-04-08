@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi'; // Import ikon panah
+import Slider from 'react-slick';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const images = [
   "/gambar1.jpg",
-    "/gambar2.jpg",
-    "/gambar3.jpg",
-    "/gambar4.jpg",
+  "/gambar2.jpg",
+  "/gambar3.jpg",
+  "/gambar4.jpg",
   '/activities1.jpg',
   '/activities2.jpg',
   '/activities3.jpg',
@@ -18,107 +21,75 @@ const images = [
   '/activities10.jpg',
   '/activities11.jpg',
   '/activities12.jpg',
-  // ...
 ];
 
+// Custom arrow components
+const PrevArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute left-0 z-10 top-1/2 -translate-y-1/2 bg-yellow-400 text-black p-2 rounded-full shadow hover:bg-yellow-500 transition"
+  >
+    <FiChevronLeft size={24} />
+  </button>
+);
+
+const NextArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute right-0 z-10 top-1/2 -translate-y-1/2 bg-yellow-400 text-black p-2 rounded-full shadow hover:bg-yellow-500 transition"
+  >
+    <FiChevronRight size={24} />
+  </button>
+);
+
 const OurActivies = () => {
-  // State untuk mengontrol apakah service ditampilkan atau tidak
-  const [isServiceOpen, setIsServiceOpen] = useState(true);
-  
-  // State untuk melacak halaman gambar
-  const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 4; // Menampilkan 4 gambar per halaman
-  
-  // Fungsi untuk toggle tampilan "Our Service"
-  const toggleService = () => {
-    setIsServiceOpen(!isServiceOpen);
-  };
-
-  // Menghitung indeks gambar yang akan ditampilkan
-  const indexOfLastImage = currentPage * imagesPerPage;
-  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
-  const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
-
-  // Fungsi untuk memuat gambar berikutnya
-  const nextPage = () => {
-    if (indexOfLastImage < images.length) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  // Fungsi untuk memuat gambar sebelumnya
-  const prevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    centerMode: true,
+    centerPadding: '0',
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        },
+      },
+    ],
   };
 
   return (
-    <div>
+    <div className="text-white pt-4 pb-10">
       <div className="container mx-auto">
-        {/* Bagian "Our Service" */}
-        <div className="bg-gray-100 shadow-2xl mb-10 rounded-lg mx-4">
-          <h2 className="text-3xl font-bold text-center mb-3 my-10">Our Activies</h2>
+        <div className="shadow-2xl rounded-lg p-8">
+          <h2 className="text-3xl font-bold font-primary text-center text-yellow-400 mb-6">Our Activities</h2>
 
-          {/* Tombol untuk membuka/mengurangi bagian "Our Service" */}
-          <div className="flex justify-center mb-4">
-            <button
-              onClick={toggleService}
-              className="px-4 py-2 text-black rounded-md flex items-center"
-            >
-              {/* Menampilkan ikon berdasarkan state */}
-              {isServiceOpen ? (
-                <FiChevronUp size={20} className="mr-2" />
-              ) : (
-                <FiChevronDown size={20} className="mr-2" />
-              )}
-            </button>
-          </div>
-
-          {/* Konten gambar yang dapat dimaksimalkan/diminalisir */}
-          <div className="relative">
-            {/* Bagian atas tetap terlihat */}
-            <motion.div
-              initial={{ height: 'auto' }}
-              animate={{ height: isServiceOpen ? 'auto' : 0 }}
-              transition={{ duration: 0.5 }}
-              className="overflow-hidden"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ml-2 mr-2">
-                {currentImages.map((image, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white shadow-md rounded-lg overflow-hidden mb-2"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <img
-                      src={image}
-                      alt={`Gambar ${index + 1}`}
-                      className="w-full h-64 object-cover"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Navigasi untuk halaman gambar */}
-          <div className="flex justify-between mt-4">
-            <button
-              onClick={prevPage}
-              disabled={currentPage === 1}
-              className="px-4 py-2 bg-yellow-500 text-white rounded-md disabled:bg-yellow-500 mb-4 ml-4"
-            >
-              Previous
-            </button>
-            <button
-              onClick={nextPage}
-              disabled={indexOfLastImage >= images.length}
-              className="px-4 py-2 bg-yellow-500 text-white rounded-md disabled:bg-yellow-500 mb-4 mr-4"
-            >
-              Next
-            </button>
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="overflow-hidden relative"
+          >
+            <Slider {...sliderSettings} className="px-2">
+              {images.map((img, index) => (
+                <div key={index} className="px-4">
+                  <div className="bg-black text-white rounded-xl overflow-hidden shadow-lg">
+                    <div
+                      className="h-64 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${img})` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </motion.div>
         </div>
       </div>
     </div>

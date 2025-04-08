@@ -109,6 +109,9 @@ export default {
         primary: ["Poppins"],
         secondary: ["Karla"],
       },
+      animation:{
+        animasi1 :['bounce 3s infinite'],
+      }
     },
   },
   plugins: [require("@tailwindcss/forms")],

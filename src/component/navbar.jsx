@@ -1,105 +1,155 @@
 import { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
-import { FaHome, FaBuilding, FaPeopleGroup, FaHandshake } from 'react-icons/fa';
+import { FaHome, FaHandshake } from 'react-icons/fa';
 import { RiProfileFill, RiGalleryView2 } from 'react-icons/ri';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { IoClose } from 'react-icons/io5';
-import { MdAccountBalance } from 'react-icons/md';
-import { FcCollaboration } from 'react-icons/fc';
 import { useNavigate } from 'react-router-dom';
-import LanguageSwitcher from './translate';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate();
 
-  const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
-  
   return (
-    <nav className="bg-white shadow-md px-4 py-2 fixed w-full top-0 left-0 z-50">
+    <nav className="bg-yellow-500 shadow-md px-4 py-2 fixed w-full top-0 left-0 z-50">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center mx-4">
           <img src="/logoshabi.png" alt="logo shabi" className="h-12 sm:h-16" />
         </div>
 
-        {/* Mobile Menu Button */}
-        <button className="md:hidden text-2xl" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden text-2xl text-black"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
           {isMobileMenuOpen ? <HiX /> : <HiMenu />}
         </button>
 
-        {/* Desktop Navbar */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex flex-grow justify-center space-x-6 md:space-x-10">
-          <div className='flex items-center space-x-1'>
-            <FaHome />
-            <button onClick={() => navigate('/')} className="text-black font-medium hover:text-yellow-500 transition-colors">Home</button>
+          {/* Home */}
+          <div className="flex flex-col items-center space-y-1">
+            <button
+              onClick={() => navigate('/')}
+              className="text-black font-medium font-primary hover:text-white transition-colors flex flex-col items-center"
+            >
+              <FaHome size={20} />
+              <span>Home</span>
+            </button>
           </div>
-          
-          {/* Profile Dropdown */}
-          <div className="relative">
-            <div className="flex items-center space-x-1">
-              <RiProfileFill />
-              <button className="text-black font-medium hover:text-yellow-500" onClick={() => setOpenDropdown(openDropdown === 'profile' ? null : 'profile')}>Profile</button>
-            </div>
+
+          {/* Profile */}
+          <div className="relative flex flex-col items-center space-y-1">
+            <button
+              className="text-black font-medium font-primary hover:text-white transition-colors flex flex-col items-center"
+              onClick={() =>
+                setOpenDropdown(openDropdown === 'profile' ? null : 'profile')
+              }
+            >
+              <RiProfileFill size={20} />
+              <span>Profile</span>
+            </button>
             {openDropdown === 'profile' && (
-              <div className="absolute top-full left-0 mt-1 w-40 bg-white shadow-lg rounded-md">
-                <button onClick={() => navigate('/profile/company')} className="block px-4 py-2 hover:bg-yellow-500 w-full text-left">Company</button>
-                <button onClick={() => navigate('/profile/manager')} className="block px-4 py-2 hover:bg-yellow-500 w-full text-left">Manager</button>
+              <div className="absolute top-full mt-2 w-40 bg-yellow-500  shadow-lg rounded-md">
+                <button
+                  onClick={() => navigate('/profile/company')}
+                  className="block px-4 py-2 text-black  hover:text-white w-full font-primary text-left transition"
+                >
+                  Company
+                </button>
+                <button
+                  onClick={() => navigate('/profile/manager')}
+                  className="block px-4 py-2 text-black font-primary hover:text-white w-full text-left transition"
+                >
+                  Our Team
+                </button>
               </div>
             )}
           </div>
-          
-          {/* Our Service Dropdown */}
-          <div className="relative">
-            <div className="flex items-center space-x-1">
-              <FaHandshake />
-              <button className="text-black font-medium hover:text-yellow-500" onClick={() => setOpenDropdown(openDropdown === 'service' ? null : 'service')}>Our Service</button>
-            </div>
+
+          {/* Our Service */}
+          <div className="relative flex flex-col items-center space-y-1">
+            <button
+              className="text-black font-primary hover:text-white font-medium  transition-colors flex flex-col items-center"
+              onClick={() =>
+                setOpenDropdown(openDropdown === 'service' ? null : 'service')
+              }
+            >
+              <FaHandshake size={20} />
+              <span>Our Service</span>
+            </button>
             {openDropdown === 'service' && (
-              <div className="absolute top-full left-0 mt-1 w-40 bg-white shadow-lg rounded-md">
-                <button onClick={() => navigate('/ourservice/kerjasama')} className="block px-4 py-2 hover:bg-yellow-500 w-full text-left">Collaboration</button>
-                <button onClick={() => navigate('/ourservice/negara')} className="block px-4 py-2 hover:bg-yellow-500 w-full text-left">Country</button>
+              <div className="absolute top-full mt-2 w-40 bg-yellow-500 shadow-lg rounded-md">
+                <button
+                  onClick={() => navigate('/ourservice/kerjasama')}
+                  className="block px-4 py-2 text-black font-primary hover:text-white w-full text-left transition"
+                >
+                  Collaboration
+                </button>
+                <button
+                  onClick={() => navigate('/ourservice/negara')}
+                  className="block px-4 py-2 text-black font-primary  hover:text-white w-full text-left transition"
+                >
+                  Country
+                </button>
               </div>
             )}
           </div>
-          
-          <div className='flex items-center space-x-1'>
-            <RiGalleryView2 />
-            <button onClick={() => navigate('/galeri')} className="text-black font-medium hover:text-yellow-500">Gallery</button>
+
+          {/* Gallery */}
+          <div className="flex flex-col items-center space-y-1">
+            <button
+              onClick={() => navigate('/galeri')}
+              className="text-black font-medium font-primary hover:text-white transition-colors flex flex-col items-center"
+            >
+              <RiGalleryView2 size={20} />
+              <span>Gallery</span>
+            </button>
           </div>
-          
-        </div>
-        <div className='flex items-center'>
-          <LanguageSwitcher />
         </div>
       </div>
-      
+
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden flex flex-col bg-white shadow-md absolute top-full left-0 w-full p-4 z-10">
-          <button onClick={() => navigate('/')} className="py-2 text-black hover:text-yellow-500">Home</button>
-          <button onClick={() => navigate('/profile/company')} className="py-2 text-black hover:text-yellow-500">Company</button>
-          <button onClick={() => navigate('/profile/manager')} className="py-2 text-black hover:text-yellow-500">Manager</button>
-          <button onClick={() => navigate('/ourservice/kerjasama')} className="py-2 text-black hover:text-yellow-500">Collaboration</button>
-          <button onClick={() => navigate('/ourservice/negara')} className="py-2 text-black hover:text-yellow-500">Country</button>
-          <button onClick={() => navigate('/galeri')} className="py-2 text-black hover:text-yellow-500">Gallery</button>
+          <button
+            onClick={() => navigate('/')}
+            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => navigate('/profile/company')}
+            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+          >
+            Company
+          </button>
+          <button
+            onClick={() => navigate('/profile/manager')}
+            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+          >
+            Manager
+          </button>
+          <button
+            onClick={() => navigate('/ourservice/kerjasama')}
+            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+          >
+            Collaboration
+          </button>
+          <button
+            onClick={() => navigate('/ourservice/negara')}
+            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+          >
+            Country
+          </button>
+          <button
+            onClick={() => navigate('/galeri')}
+            className="py-2 px-2 text-black hover:bg-yellow-500 hover:text-white rounded-md transition"
+          >
+            Gallery
+          </button>
         </div>
       )}
-
-       
-      {/* Search Button
-      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center">
-        {!isSearchOpen ? (
-          <AiOutlineSearch className="text-gray-500 hover:text-yellow-500 cursor-pointer" size={24} onClick={toggleSearch} />
-        ) : (
-          <div className="flex items-center space-x-2">
-            <input type="text" placeholder="Search..." className="px-4 py-2 rounded-md bg-gray-100" />
-            <IoClose className="text-gray-500 hover:text-red-500 cursor-pointer" size={24} onClick={toggleSearch} />
-          </div>
-        )}
-      </div> */}
     </nav>
   );
 };

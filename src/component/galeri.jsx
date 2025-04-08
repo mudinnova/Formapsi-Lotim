@@ -5,39 +5,26 @@ import { useNavigate } from "react-router-dom";
 const Gallery = () => {
   const navigate = useNavigate();
   const images = [
-    "/gambar1.jpg",
-    "/gambar2.jpg",
-    "/gambar3.jpg",
-    "/gambar4.jpg",
-    "/activities1.jpg",
-    "/activities2.jpg",
-    "/activities3.jpg",
-    "/activities6.jpg",
-    "/activities7.jpg",
-    "/activities8.jpg",
-    "/activities9.jpg",
-    "/activities10.jpg",
-    "/activities11.jpg",
-    "/activities12.jpg",
-    "/activities5.jpg",
+    "/gambar1.jpg", "/gambar2.jpg", "/gambar3.jpg", "/gambar4.jpg",
+    "/activities1.jpg", "/activities2.jpg", "/activities3.jpg",
+    "/activities6.jpg", "/activities7.jpg", "/activities8.jpg",
+    "/activities9.jpg", "/activities10.jpg", "/activities11.jpg",
+    "/activities12.jpg", "/activities5.jpg",
   ];
 
   const galleryRef = useRef(null);
 
   useEffect(() => {
     const gallery = galleryRef.current;
-
     if (gallery) {
       const scrollStep = 1;
       const scrollInterval = 30;
-
       const autoScroll = setInterval(() => {
         gallery.scrollLeft += scrollStep;
         if (gallery.scrollLeft + gallery.offsetWidth >= gallery.scrollWidth) {
           gallery.scrollLeft = 0;
         }
       }, scrollInterval);
-
       return () => clearInterval(autoScroll);
     }
   }, []);
@@ -59,9 +46,11 @@ const Gallery = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="bg-gray-100 h-full max-w-[1200px] shadow-lg rounded-lg p-6">
+      <div className=" w-full shadow-xl rounded-2xl p-6">
         <div className="flex flex-col items-center">
-          <h3 className="text-yellow-500 font-primary font-bold text-4xl">Gallery</h3>
+          <h3 className="text-yellow-400 font-primary font-bold text-4xl tracking-wide">
+            Gallery
+          </h3>
         </div>
         <div
           ref={galleryRef}
@@ -72,17 +61,17 @@ const Gallery = () => {
               key={index}
               src={image}
               alt={`Gallery image ${index + 1}`}
-              className="rounded-lg w-56 h-40 object-cover mx-2 shadow-md"
+              className="rounded-xl w-56 h-98 object-cover mx-2 shadow-md hover:scale-105 transition-transform duration-300"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             />
           ))}
         </div>
-        <div className="flex justify-end mt-4">
+        <div className="flex justify-end mt-6">
           <button
-            className="text-white font-medium font-secondary rounded-md bg-yellow-500 hover:bg-yellow-900 px-4 py-2 transition-colors"
             onClick={() => navigate("/galeri")}
+            className="bg-yellow-500 hover:bg-yellow-700 text-white font-semibold font-secondary px-6 py-2 rounded-lg shadow-md transition duration-300"
           >
             More
           </button>

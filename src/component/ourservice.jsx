@@ -1,107 +1,130 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from 'react-router-dom';
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const OurService = () => {
   const navigate = useNavigate();
-  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [selected, setSelected] = useState(null);
+
   const images = [
     {
-      src: "/polandia.jpg",
+      src: "/Country/polandia.jpg",
       name: "Polandia",
-      description: "Polandia adalah negara di Eropa Tengah yang terkenal dengan sejarahnya yang kaya, arsitektur klasik, serta budaya yang kuat. Ibu kotanya, Warsawa, merupakan pusat ekonomi dan politik dengan banyak gedung pencakar langit modern yang berpadu dengan bangunan bersejarah."
+      description:
+        "Polandia terkenal dengan kota Warsawa yang modern namun kaya sejarah. Negara ini merupakan destinasi menarik bagi pekerja migran di bidang manufaktur dan logistik.",
     },
     {
-      src: "/bulgaria.jpg",
-      name: "Bulgaria",
-      description: "Bulgaria adalah negara di Eropa Tenggara yang memiliki sejarah panjang yang mencakup peradaban Romawi, Kekaisaran Bulgaria, hingga era Ottoman. Sofia, ibu kota Bulgaria, merupakan kota yang dipenuhi dengan bangunan bersejarah, gereja kuno, dan pusat kebudayaan yang berkembang pesat."
+      src: "/Country/ceko.jpg",
+      name: "Ceko",
+      description:
+        "Republik Ceko, dengan ibu kota Praha, adalah pusat industri dan pariwisata. Banyak pekerja migran Indonesia bekerja di pabrik dan sektor jasa di sini.",
     },
     {
-      src: "/slovakia.jpg",
-      name: "Slovakia",
-      description: "Slovakia merupakan negara di Eropa Tengah yang memiliki lanskap alam yang menakjubkan, dengan Pegunungan Carpathian yang membentang di bagian utara. Negara ini terkenal dengan kastil abad pertengahan, seperti Kastil Spiš yang merupakan salah satu kastil terbesar di Eropa."
+      src: "/Country/jepang.jpg",
+      name: "Jepang",
+      description:
+        "Jepang dikenal dengan teknologi tinggi dan budaya kerja yang disiplin. Negara ini banyak merekrut tenaga kerja asing melalui program pemagangan.",
     },
     {
-      src: "/hungaria.jpg",
-      name: "Hungaria",
-      description: "Hungaria adalah negara yang terletak di Eropa Tengah dengan ibu kota Budapest, yang dikenal sebagai salah satu kota paling indah di dunia. Budapest terkenal dengan Sungai Danube yang membelah kota menjadi dua bagian, Buda dan Pest, serta bangunan ikonik seperti Gedung Parlemen Hungaria."
+      src: "/Country/arab.jpg",
+      name: "Arab Saudi",
+      description:
+        "Arab Saudi merupakan tujuan populer untuk pekerja rumah tangga dan sektor konstruksi, dengan budaya kerja yang berbeda dan upah kompetitif.",
     },
     {
-      src: "/portugal.jpg",
-      name: "Portugal",
-      description: "Portugal adalah negara maritim di Eropa Barat yang dikenal dengan sejarah eksplorasi dunia, pantai yang spektakuler, serta warisan budaya yang kaya. Ibu kotanya, Lisbon, merupakan kota yang penuh dengan bangunan bersejarah, jalanan berbatu yang menawan, serta pemandangan sungai Tagus yang indah."
+      src: "/Country/taiwan.jpg",
+      name: "Taiwan",
+      description:
+        "Taiwan menawarkan peluang kerja di sektor pabrik, pengasuhan lansia, dan rumah tangga. Negara ini terkenal dengan kenyamanan hidup dan upah yang layak.",
     },
     {
-      src: '/ceko.jpg',
-      name: 'Ceko',
-      description: 'Ceko memiliki Praha, kota dengan arsitektur indah dan sejarah yang kaya.'
-    },
-    {
-      src: '/au.jpg',
-      name: 'Australia',
-      description: 'Australia adalah negara dengan lanskap yang unik dan kota-kota modern.'
-    },
-  ];
-
-  const galleryRef = useRef(null);
-
-  useEffect(() => {
-    const gallery = galleryRef.current;
-    if (gallery) {
-      const scrollStep = 1;
-      const scrollInterval = 30;
-      const autoScroll = setInterval(() => {
-        gallery.scrollLeft += scrollStep;
-        if (gallery.scrollLeft + gallery.offsetWidth >= gallery.scrollWidth) {
-          gallery.scrollLeft = 0;
-        }
-      }, scrollInterval);
-      return () => clearInterval(autoScroll);
+      src: "/Country/singapura.jpg",
+      name: "Singapura",
+      description:
+        "Singapura dikenal sebagai pusat keuangan dan bisnis di Asia Tenggara. Negara ini menawarkan peluang kerja di sektor rumah tangga, konstruksi, dan layanan. Dengan sistem kerja yang teratur dan lingkungan multikultural, Singapura menjadi pilihan menarik bagi pekerja migran Indonesia.",
     }
-  }, []);
+    
+  ];
 
   return (
     <motion.div className="flex flex-col items-center mt-10 px-4 md:px-10 lg:px-20">
-      <div className="bg-gray-100 w-full max-w-[1200px] shadow-lg rounded-lg p-6">
-        <div className="flex flex-col items-center">
-          <h3 className="text-yellow-500 font-primary font-bold text-3xl md:text-4xl">Our Service</h3>
-        </div>
-        <div ref={galleryRef} className="flex flex-row mt-6 mx-4 mb-6 overflow-x-auto whitespace-nowrap scrollbar-hide w-full">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center mx-2 min-w-[160px] sm:min-w-[180px] md:min-w-[200px] lg:min-w-[220px] cursor-pointer border-b pb-4 bg-white rounded-lg shadow-md p-4"
-              onClick={() => setSelectedCountry(image)}
-            >
-              <motion.img
-                src={image.src}
-                alt={`Gallery image of ${image.name}`}
-                className="rounded-lg shadow-md w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] flex-shrink-0"
-              />
-              <p className="text-black font-medium mt-2 text-lg border-b-2 pb-1 w-full text-center">{image.name}</p>
-            </div>
-          ))}
+      <div className="">
+        <h3 className="text-yellow-500 font-primary font-bold text-3xl md:text-4xl text-center mb-6">
+          Our Service
+        </h3>
+
+        <div className="flex flex-row flex-nowrap overflow-x-auto gap-6 pb-4 scrollbar-hide">
+          {images.map((image, index) => {
+            const cardRef = useRef(null);
+
+            const handleClick = () => {
+              setSelected(selected === index ? null : index);
+              setTimeout(() => {
+                cardRef.current?.scrollIntoView({
+                  behavior: "smooth",
+                  inline: "center",
+                  block: "nearest",
+                });
+              }, 100);
+            };
+
+            return (
+              <div
+                key={index}
+                ref={cardRef}
+                className="flex flex-row gap-4 min-w-fit items-start"
+              >
+                <div
+                  className="relative w-[200px] h-[320px] cursor-pointer rounded-md overflow-hidden shadow-md flex-shrink-0"
+                  onClick={handleClick}
+                >
+                  <img
+                    src={image.src}
+                    alt={`Iconic image of ${image.name}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-60 py-2 text-center">
+                    <p className="text-black font-primary font-semibold text-sm">
+                      {image.name}
+                    </p>
+                  </div>
+                </div>
+
+                {selected === index && (
+                  <motion.div
+                    className="max-w-sm bg-white/60 backdrop-blur-md p-4 rounded-lg shadow-md text-sm h-fit"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <p className="text-black font-secondary font-medium">{image.description}</p>
+                    {/* <button
+                      onClick={() =>
+                        navigate(
+                          `/ourservice/negara/${image.name
+                            .toLowerCase()
+                            .replace(/\s/g, "-")}`
+                        )
+                      }
+                      className="mt-3 inline-block bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-800 transition-colors font-secondary"
+                    >
+                      Selengkapnya
+                    </button> */}
+                  </motion.div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
-        <AnimatePresence>
-          {selectedCountry && (
-            <motion.div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
-              <motion.div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
-                <h4 className="text-xl font-bold text-yellow-600">{selectedCountry.name}</h4>
-                <div className="text-gray-700 mt-2 leading-relaxed">
-                  <p>{selectedCountry.description}</p>
-                </div>
-                <div className="space-x-4">
-                  <button className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md" onClick={() => setSelectedCountry(null)}>Close</button>
-                  <button className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md">Open</button>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <button className="flex justify-end mb-4 w-full" onClick={() => navigate("/ourservice/negara")}>
-          <h1 className="text-white mr-6 font-medium font-secondary rounded-md bg-yellow-500 hover:bg-yellow-900 px-4 py-2 transition-colors">More</h1>
-        </button>
+        <div className="flex justify-end mt-6">
+          <button
+            className="text-white font-medium font-secondary rounded-md bg-yellow-600 hover:bg-yellow-900 px-4 py-2 transition-colors"
+            // onClick={() => navigate("/ourservice/negara")}
+          >
+            More
+          </button>
+        </div>
       </div>
     </motion.div>
   );

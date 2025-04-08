@@ -10,7 +10,7 @@ const SocialMedia = () => {
   return (
     <div className="flex flex-col items-center my-10">
       {/* Judul */}
-      <h2 className="text-xl font-bold text-yellow-500 mb-4">MEDIA SOSIAL</h2>
+      <h2 className="text-xl font-bold font-primary text-yellow-500 mb-4">MEDIA SOSIAL</h2>
 
       {/* Grid Icon Media Sosial */}
       <div className="flex gap-4">
@@ -20,7 +20,7 @@ const SocialMedia = () => {
             href={social.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-20 h-20 md:w-24 md:h-24 border-2 border-gray-300 rounded-lg flex justify-center items-center hover:shadow-lg transition-transform transform hover:scale-105"
+            className="w-20 h-20 md:w-24 md:h-24 border-2 border-yellow-500 rounded-lg flex justify-center items-center hover:shadow-lg transition-transform transform hover:scale-105"
           >
             <img src={social.img} alt={social.name} className="w-12 h-12" />
           </a>
