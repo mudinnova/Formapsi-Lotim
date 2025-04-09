@@ -72,8 +72,7 @@ const Dashboard = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
-            Penempatan Pekerja Migran Indonesia ke negara tujuan dengan
-            integritas dan profesionalisme.
+            Placement of Indonesian Migrant Workers to destination countries with integrity and professionalism.
           </motion.p>
 
           <motion.button
@@ -103,16 +102,16 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Jam Operasional */}
+      {/* Operating Hours */}
       <div className="w-full bg-yellow-400 py-4 mt-6">
         <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8 text-black font-primary font-semibold text-sm md:text-base">
           <div className="flex items-center space-x-2">
-            <span>Jam Operasional:</span>
-            <span>Senin - Jumat</span>
+            <span>Operating Hours:</span>
+            <span>Monday - Friday</span>
             <span>08.00 - 16.00 WITA</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span>Sabtu:</span>
+            <span>Saturday:</span>
             <span>08.00 - 12.00 WITA</span>
           </div>
         </div>
@@ -151,14 +150,12 @@ const Dashboard = () => {
               PT. SHABI LOMBOK BERSAUDARA
             </h1>
             <p className="text-gray-800 mt-4 text-sm md:text-base leading-relaxed font-secondary font-bold">
-              PT. Shabi Lombok Bersaudara is an Indonesian Migrant Worker
-              Placement Company (P3MI) that places migrant workers in various
-              destination countries such as the European Union, Australia,
-              Japan, Taiwan, Malaysia, the Maldives, Saudi Arabia, and
-              Singapore. We are committed to placing candidates in positions
-              that align with integrity, productivity, trust, and excellence.
+              PT. Shabi Lombok Bersaudara is an Indonesian Migrant Worker Placement Company (P3MI) that places migrant workers in various destination countries such as the European Union, Australia, Japan, Taiwan, Malaysia, the Maldives, Saudi Arabia, and Singapore. We are committed to placing candidates in positions that align with integrity, productivity, trust, and excellence.
             </p>
-            <button className="mt-6 bg-yellow-400 font-secondary text-white font-bold px-6 py-2 rounded-lg shadow-lg hover:bg-yellow-600 transition w-full sm:w-fit">
+            <button
+              onClick={() => navigate("/profile/company")}
+              className="mt-6 bg-yellow-400 font-secondary text-white font-bold px-6 py-2 rounded-lg shadow-lg hover:bg-yellow-600 transition w-full sm:w-fit"
+            >
               More
             </button>
           </div>
@@ -166,11 +163,12 @@ const Dashboard = () => {
       </motion.div>
 
       <Gallery />
+
       <div className="mt-7">
         <OurService />
       </div>
 
-      {/* Ilustrasi + Social Media */}
+      {/* Illustration + Social Media */}
       <motion.div
         className="flex flex-col md:flex-row justify-center items-center px-6 gap-10 md:gap-0 py-10"
         initial={{ opacity: 0, y: 40 }}
@@ -185,12 +183,12 @@ const Dashboard = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="absolute -top-4 md:-top-3 bg-white border border-gray-300 shadow-md rounded-xl px-6 py-4 max-w-xs md:max-w-md text-base md:text-lg font-secondary text-black z-10">
-            <p>Hmm... Gimana sih cara kerja di luar negeri?</p>
+            <p>Hmm... How do I work abroad?</p>
             <div className="absolute left-6 -bottom-3 w-4 h-4 bg-white border-l border-b border-gray-300 rotate-45"></div>
           </div>
           <img
             src="/animasi/orangbingung.png"
-            alt="Orang bingung"
+            alt="Confused person"
             className="w-72 md:w-80 animate-bounce-slow"
           />
         </motion.div>

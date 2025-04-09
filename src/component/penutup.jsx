@@ -20,7 +20,7 @@ const Footer = () => {
 
           {/* Address */}
           <div className="mb-6 lg:mb-0 w-full lg:w-1/4">
-            <h4 className="text-lg font-semibold mb-3">Alamat</h4>
+            <h4 className="text-lg font-semibold mb-3">Address</h4>
             <p className="text-sm font-secondary">
               7FG8+X2H, Rensing, Kec. Sakra Bar., Kabupaten Lombok Timur, Nusa Tenggara Bar. 83671
             </p>

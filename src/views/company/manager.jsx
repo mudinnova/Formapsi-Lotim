@@ -14,7 +14,8 @@ const positions = [
   { title: "MARKETING MANAGER", imgSrc: "/manager/Karti.jpg", description: "Karti" },
   { title: "DIVISION IT", imgSrc: "/manager/nova.jpg", description: "Muhamad Halimudin Nova" },
   { title: "MARKETING DIVISION", imgSrc: "/manager/saleh.jpg", description: "Muhammad Saleh" },
-  { title: "INTERNATIONAL JOB AFFAIR", imgSrc: "/manager/farid.jpg", description: "Farid" }
+  { title: "INTERNATIONAL JOB AFFAIR", imgSrc: "/manager/farid.jpg", description: "Farid" },
+  { title: "INTERNATIONAL JOB AFFAIR", imgSrc: "/manager/arianti.jpg", description: "Arianti" },
 ];
 
 const Loader = () => (
@@ -42,7 +43,7 @@ const Manager = () => {
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="relative text-center px-6">
           <motion.h1
-            className="text-4xl md:text-5xl font-extrabold text-yellow-500"
+            className="text-4xl md:text-5xl font-extrabold text-yellow-400"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -58,7 +59,7 @@ const Manager = () => {
             Profile & Our Team
           </motion.p>
           <motion.div
-            className="w-32 h-1 bg-yellow-500 mt-4 mx-auto"
+            className="w-32 h-1 bg-yellow-400 mt-4 mx-auto"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1 }}
@@ -70,7 +71,7 @@ const Manager = () => {
       <div className="relative flex-grow">
         <div className="absolute inset-0 bg-cover bg-center opacity-5" style={{ backgroundImage: "url('/bg3.jpg')" }} />
         <div className="relative z-10 py-12 px-8 lg:px-36">
-          <h2 className="text-3xl font-extrabold text-center text-yellow-500 mb-10">
+          <h2 className="text-3xl font-extrabold text-center text-yellow-400 mb-10">
             COMPANY ORGANIZATIONAL STRUCTURE
           </h2>
 
@@ -83,7 +84,7 @@ const Manager = () => {
           >
             <div className="text-black rounded-lg rounded-t-full relative shadow-lg bg-gray-100">
               <img src={positions[0].imgSrc} alt={positions[0].title} className="w-52 rounded-t-full" />
-              <div className="w-full absolute bg-yellow-500 text-white py-1 mt-[-35px] rounded-b-lg shadow-md text-center">
+              <div className="w-full absolute bg-yellow-400 text-white py-1 mt-[-35px] rounded-b-lg shadow-md text-center">
                 <h3 className="mx-1 font-extrabold text-xs">{positions[0].title}</h3>
                 <p className="text-xs mx-1 font-medium">{positions[0].description}</p>
               </div>
@@ -101,7 +102,7 @@ const Manager = () => {
               <div key={index} className="flex flex-col items-center mb-6">
                 <div className="text-black rounded-lg rounded-t-full relative shadow-lg bg-gray-100">
                   <img src={position.imgSrc} alt={position.title} className="w-52 rounded-t-full" />
-                  <div className="w-full absolute bg-yellow-500 text-white py-1 mt-[-35px] rounded-b-lg shadow-md text-center">
+                  <div className="w-full absolute bg-yellow-400 text-white py-1 mt-[-35px] rounded-b-lg shadow-md text-center">
                     <h3 className="mx-1 font-extrabold text-xs">{position.title}</h3>
                     <p className="text-xs mx-1 font-medium">{position.description}</p>
                   </div>

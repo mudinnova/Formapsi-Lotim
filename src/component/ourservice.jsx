@@ -143,7 +143,7 @@ const OurService = () => {
       <div className="flex justify-end mt-6 w-full">
         <button
           className="text-white font-medium font-secondary rounded-md bg-yellow-400 hover:bg-yellow-900 px-4 py-2 transition-colors"
-        // onClick={() => navigate("/ourservice/negara")}
+        onClick={() => navigate("/ourservice/negara")}
         >
           More
         </button>
