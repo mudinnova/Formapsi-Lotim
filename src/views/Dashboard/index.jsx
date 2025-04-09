@@ -182,14 +182,14 @@ const Dashboard = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="absolute -top-4 md:-top-3 bg-white border border-gray-300 shadow-md rounded-xl px-6 py-4 max-w-xs md:max-w-md text-base md:text-lg font-secondary text-black z-10">
+          <div className="absolute -top-4 md:-top-10 bg-white border border-gray-300 shadow-md rounded-xl px-6 py-4 max-w-xs md:max-w-md text-base md:text-lg font-secondary text-black z-10">
             <p>Hmm... How do I work abroad?</p>
             <div className="absolute left-6 -bottom-3 w-4 h-4 bg-white border-l border-b border-gray-300 rotate-45"></div>
           </div>
           <img
-            src="/animasi/orangbingung.png"
+            src="/animasi/animasi2.png"
             alt="Confused person"
-            className="w-72 md:w-80 animate-bounce-slow"
+            className="w-[500px] md:w-80 animate-bounce-slow"
           />
         </motion.div>
 
