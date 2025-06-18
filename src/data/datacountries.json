@@ -1,0 +1,20 @@
+{
+  "asia": [
+    { "src": "/negara/taiwan.jpg", "country": "Taiwan" },
+    { "src": "/negara/jepang.jpg", "country": "Jepang" },
+    { "src": "/negara/maldives.jpg", "country": "Maldives" },
+    { "src": "/negara/malay.jpg", "country": "Malaysia" },
+    { "src": "/negara/singapura.jpg", "country": "Singapura" },
+    { "src": "/negara/arabia.jpg", "country": "Arab Saudi" },
+    { "src": "/negara/turki.jpg", "country": "Turki" }
+  ],
+  "europe": [
+    { "src": "/negara/polandia.jpg", "country": "Polandia" },
+    { "src": "/negara/bulgaria.jpg", "country": "Bulgaria" },
+    { "src": "/negara/slovakia.jpg", "country": "Slovakia" },
+    { "src": "/negara/hungaria.jpg", "country": "Hungaria" },
+    { "src": "/negara/portugal.jpg", "country": "Portugal" },
+    { "src": "/negara/ceko.jpg", "country": "Ceko" },
+    { "src": "/negara/romania.jpg", "country": "Romania" }
+  ]
+}

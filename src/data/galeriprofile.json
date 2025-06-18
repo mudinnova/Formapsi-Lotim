@@ -1,0 +1,29 @@
+{
+  "galeriKegiatan": [
+    { "src": "/training1.jpg" },
+    { "src": "/training2.jpg" },
+    { "src": "/training3.jpg" },
+    { "src": "/training4.jpg" },
+    { "src": "/training5.jpg" },
+    { "src": "/training6.jpg" },
+    { "src": "/training7.jpg" },
+    { "src": "/training8.jpg" },
+    { "src": "/gambar1.jpg" },
+    { "src": "/gambar2.jpg" },
+    { "src": "/gambar3.jpg" },
+    { "src": "/gambar4.jpg" }
+  ],
+  "galeriAktivitas": [
+    { "src": "/activities1.jpg" },
+    { "src": "/activities2.jpg" },
+    { "src": "/activities3.jpg" },
+    { "src": "/activities5.jpg" },
+    { "src": "/activities6.jpg" },
+    { "src": "/activities7.jpg" },
+    { "src": "/activities8.jpg" },
+    { "src": "/activities9.jpg" },
+    { "src": "/activities10.jpg" },
+    { "src": "/activities11.jpg" },
+    { "src": "/activities12.jpg" }
+  ]
+}

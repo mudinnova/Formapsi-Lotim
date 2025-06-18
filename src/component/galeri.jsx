@@ -1,84 +1,57 @@
-import { useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import galeriData from "../data/galeri.json"; // JSON lokal
 
-const Gallery = () => {
-  const navigate = useNavigate();
-  const images = [
-    "/gambar1.jpg", "/gambar2.jpg", "/gambar3.jpg", "/gambar4.jpg",
-    "/activities1.jpg", "/activities2.jpg", "/activities3.jpg",
-    "/activities6.jpg", "/activities7.jpg", "/activities8.jpg",
-    "/activities9.jpg", "/activities10.jpg", "/activities11.jpg",
-    "/activities12.jpg", "/activities5.jpg",
-  ];
-
-  const galleryRef = useRef(null);
+const GalleryLanding = () => {
+  const [galeri, setGaleri] = useState([]);
 
   useEffect(() => {
-    const gallery = galleryRef.current;
-    if (gallery) {
-      const scrollStep = 1;
-      const scrollInterval = 30;
-      const autoScroll = setInterval(() => {
-        gallery.scrollLeft += scrollStep;
-        if (gallery.scrollLeft + gallery.offsetWidth >= gallery.scrollWidth) {
-          gallery.scrollLeft = 0;
-        }
-      }, scrollInterval);
-      return () => clearInterval(autoScroll);
-    }
+    setGaleri(galeriData); // data statis dari JSON lokal
   }, []);
 
-  const fadeInVariant = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
-    },
-  };
-
   return (
-    <motion.div
-      className="flex justify-center mt-10 px-4"
-      variants={fadeInVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      <div className=" w-full shadow-xl rounded-2xl p-6">
-        <div className="flex flex-col items-center">
-          <h3 className="text-yellow-400 font-primary font-bold text-4xl tracking-wide">
-            Gallery
-          </h3>
-        </div>
-        <div
-          ref={galleryRef}
-          className="flex flex-row mt-6 overflow-x-auto whitespace-nowrap scrollbar-hide px-4"
-        >
-          {images.map((image, index) => (
-            <motion.img
-              key={index}
-              src={image}
-              alt={`Gallery image ${index + 1}`}
-              className="rounded-xl w-56 h-98 object-cover mx-2 shadow-md hover:scale-105 transition-transform duration-300"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            />
-          ))}
-        </div>
-        <div className="flex justify-end mt-6">
-          <button
-            onClick={() => navigate("/galeri")}
-            className="bg-yellow-500 hover:bg-yellow-700 text-white font-semibold font-secondary px-6 py-2 rounded-lg shadow-md transition duration-300"
+    <div className="min-h-screen bg-gray-100 px-6 py-12">
+      <motion.div
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-center mb-10"
+      >
+        <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-2">
+          Galeri Kegiatan Kami
+        </h1>
+        <p className="text-gray-600 max-w-xl mx-auto">
+          Dokumentasi momen-momen berharga dalam kegiatan sosial, edukasi, dan kolaborasi kami.
+        </p>
+      </motion.div>
+
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        {galeri.map((item) => (
+          <motion.div
+            key={item.id}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="overflow-hidden rounded-xl shadow-lg bg-white"
           >
-            More
-          </button>
-        </div>
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="w-full h-60 object-cover transform transition-transform duration-300 hover:scale-110"
+            />
+          </motion.div>
+        ))}
       </div>
-    </motion.div>
+      <button className="flex justify-center">
+        <a
+          onclick={() => window.scrollTo(0, 0)}
+          href="/galeri"
+          className="mt-8 inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-700 transition-colors duration-300"
+        >
+          Lihat Semua Galeri
+        </a>
+      </button>
+    </div>
   );
 };
 
-export default Gallery;
+export default GalleryLanding;

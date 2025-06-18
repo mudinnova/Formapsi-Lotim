@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "src": "/gambar1.jpg",
+    "alt": "Kegiatan Sosial di Desa Batu Putik"
+  },
+  {
+    "id": 2,
+    "src": "/gambar2.jpg",
+    "alt": "Pelatihan Kesehatan untuk Remaja"
+  },
+  {
+    "id": 3,
+    "src": "/gambar3.jpg",
+    "alt": "Kolaborasi Bersama Komunitas Lokal"
+  },
+  {
+    "id": 4,
+    "src": "/gambar4.jpg",
+    "alt": "Pemberian Bantuan Alat Tulis"
+  },
+  {
+    "id": 5,
+    "src": "/activities1.jpg",
+    "alt": "Diskusi Panel Mahasiswa dan Masyarakat"
+  },
+  {
+    "id": 6,
+    "src": "/activities6.jpg",
+    "alt": "Kerja Bakti Lingkungan"
+  }
+]
