@@ -17,8 +17,6 @@ const App = () => {
         <Route path="/ourservice/kerjasama" element={<Kerjsama />} />
         <Route path="/ourservice/negara" element={<Negara />} />
         <Route path="/galeri" element={<LandingGallery />} />
-        {/* <Route path="/ourservice/negara/polandia" element={<Polandia />} />
-        <Route path="/ourservice/negara/cheko" element={<Cheko />} /> */}
 
         {/* Tambahkan rute lainnya jika diperlukan */}
       </Routes>
