@@ -46,7 +46,7 @@ const managerImage = [
   },
   {
     title: "MARKETING DIVISION",
-    imgSrc: "/manager/saleh.jpg",
+    imgSrc: "/manager/SALEH.jpg",
     description: "MUHAMMAD SALEH",
   },
   {
@@ -61,7 +61,7 @@ const managerImage = [
   },
   {
     title: "ADMINISTRATION",
-    imgSrc: "/manager/MONIKA.JPG",
+    imgSrc: "/manager/ika.jpg",
     description: "MONIKA MAYADIANA PUTRI",
   },
 ];
