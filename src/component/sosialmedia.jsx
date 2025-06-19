@@ -27,7 +27,7 @@ const SocialMedia = () => {
   return (
     <div className="flex flex-col justify-center h-full">
       <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-        Temukan Kami di Media Sosial
+        Find Us on Social Media
       </h2>
       <div className="flex gap-5 flex-wrap">
         {socialLinks.map((item) => (

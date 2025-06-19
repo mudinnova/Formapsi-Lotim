@@ -14,7 +14,7 @@ const OurService = () => {
                 Country
               </h1>
               <p className="text-gray-600 max-w-xl mx-auto">
-                Dokumentasi momen-momen berharga dalam kegiatan sosial, edukasi, dan kolaborasi kami.
+                Countries of Destination for Working Abroad 
               </p>
             </motion.div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

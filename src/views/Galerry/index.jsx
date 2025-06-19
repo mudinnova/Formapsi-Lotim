@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Navbar from '../../component/navbar';
@@ -51,8 +50,8 @@ const LandingGallery = () => {
     ],
   };
 
-  const galeriKegiatan = galeriprofile?.galeriKegiatan || [];
-  const galeriAktivitas = galeriprofile?.galeriAktivitas || [];
+  const galleryEvents = galeriprofile?.galeriKegiatan || [];
+  const galleryActivities = galeriprofile?.galeriAktivitas || [];
 
   return (
     <div className="bg-white text-black min-h-screen">
@@ -72,7 +71,7 @@ const LandingGallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            GALERI KEGIATAN
+            ACTIVITY GALLERY
           </motion.h1>
           <motion.p
             className="text-lg mt-2"
@@ -80,7 +79,7 @@ const LandingGallery = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.3 }}
           >
-            Dokumentasi kegiatan terkini dalam satu tampilan.
+            A showcase of our most recent activities in one place.
           </motion.p>
           <motion.div
             className="w-24 h-1 bg-yellow-400 mt-4 mx-auto"
@@ -91,11 +90,11 @@ const LandingGallery = () => {
         </div>
       </header>
 
-      {/* Galeri Kegiatan */}
-      {galeriKegiatan.length > 0 && (
+      {/* Gallery of Events */}
+      {galleryEvents.length > 0 && (
         <section className="container mx-auto px-4 py-12">
           <h2 className="text-3xl font-bold font-primary text-center text-yellow-500 mb-10">
-            Galeri Kegiatan
+            Event Gallery
           </h2>
           <motion.div
             initial={{ opacity: 0 }}
@@ -104,8 +103,8 @@ const LandingGallery = () => {
             className="relative"
           >
             <Slider {...sliderSettings}>
-              {galeriKegiatan.map((item, index) => (
-                <div key={`kegiatan-${index}`} className="px-4">
+              {galleryEvents.map((item, index) => (
+                <div key={`event-${index}`} className="px-4">
                   <motion.div
                     whileHover={{ scale: 1.03 }}
                     className="rounded-xl overflow-hidden shadow-lg bg-black group"
@@ -122,11 +121,11 @@ const LandingGallery = () => {
         </section>
       )}
 
-      {/* Galeri Aktivitas */}
-      {galeriAktivitas.length > 0 && (
+      {/* Gallery of Activities */}
+      {galleryActivities.length > 0 && (
         <section className="container mx-auto px-4 py-12">
           <h2 className="text-3xl font-bold font-primary text-center text-yellow-500 mb-10">
-            Galeri Aktivitas
+            Activity Gallery
           </h2>
           <motion.div
             initial={{ opacity: 0 }}
@@ -135,8 +134,8 @@ const LandingGallery = () => {
             className="relative"
           >
             <Slider {...sliderSettings}>
-              {galeriAktivitas.map((item, index) => (
-                <div key={`aktivitas-${index}`} className="px-4">
+              {galleryActivities.map((item, index) => (
+                <div key={`activity-${index}`} className="px-4">
                   <motion.div
                     whileHover={{ scale: 1.03 }}
                     className="rounded-xl overflow-hidden shadow-lg bg-black group"

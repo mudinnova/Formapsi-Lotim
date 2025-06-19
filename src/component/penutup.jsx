@@ -28,7 +28,7 @@ const Footer = () => {
 
           {/* Map */}
           <div className="w-full lg:w-1/4">
-            <h4 className="text-lg font-semibold font-primary mb-3">Lokasi</h4>
+            <h4 className="text-lg font-semibold font-primary mb-3">Location</h4>
             <div className="rounded-lg overflow-hidden shadow-md aspect-video">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.6730588254286!2d116.4651175!3d-8.7225626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc53c92d4de2af%3A0xace27d71adc99f05!2sPT.%20SHABI%20LOMBOK%20BERSAUDARA!5e0!3m2!1sid!2sid!4v1741245922012!5m2!1sid!2sid"

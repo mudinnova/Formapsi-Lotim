@@ -61,8 +61,8 @@ const Dashboard = () => {
       {/* Operating Hours */}
       <div className="bg-yellow-300 py-3 text-center text-sm md:text-base font-medium">
         <p>
-          <span className="mr-4">🕒 Mon-Fri: 08.00 - 16.00 WITA</span>
-          <span>Saturday: 08.00 - 12.00 WITA</span>
+          <span className="mr-4">🕒 Mon–Fri: 08:00 AM – 04:00 PM WITA</span>
+          <span>Saturday: 08:00 AM – 12:00 PM WITA</span>
         </p>
       </div>
 
@@ -87,14 +87,14 @@ const Dashboard = () => {
           </h2>
           <h3 className="text-xl font-semibold mb-4 text-black">PT. Shabi Lombok Bersaudara</h3>
           <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-            Kami adalah perusahaan penempatan pekerja migran Indonesia (P3MI) ke negara tujuan seperti Uni Eropa,
-            Australia, Jepang, Taiwan, Malaysia, Maladewa, Arab Saudi, dan Singapura.
+            We are an Indonesian Migrant Worker Placement Company (P3MI) that deploys workers to destinations such as
+            the European Union, Australia, Japan, Taiwan, Malaysia, the Maldives, Saudi Arabia, and Singapore.
           </p>
           <button
             onClick={() => navigate("/profile/company")}
             className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-white px-5 py-2 rounded-lg shadow-lg transition-transform hover:scale-105"
           >
-            Selengkapnya
+            Read More
           </button>
         </motion.div>
       </section>
@@ -106,7 +106,7 @@ const Dashboard = () => {
 
       {/* Services Section */}
       <OurService />
-      
+
       {/* Social Media Section */}
       <motion.section
         className="py-16 bg-white grid grid-cols-1 md:grid-cols-2 gap-10 px-6 max-w-7xl mx-auto"
@@ -116,7 +116,7 @@ const Dashboard = () => {
       >
         <div className="relative flex items-center justify-center">
           <div className="absolute bg-white shadow px-5 py-3 rounded-lg text-black text-sm font-medium top-[-20px] left-10 z-10">
-            Bingung gimana kerja di luar negeri?
+            Confused about how to work abroad?
           </div>
           <img src="/animasi/animasi2.png" alt="Confused Person" className="w-72 animate-bounce-slow" />
         </div>

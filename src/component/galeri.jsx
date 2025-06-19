@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import galeriData from "../data/galeri.json"; // JSON lokal
+import galeriData from "../data/galeri.json"; // Local JSON
 
 const GalleryLanding = () => {
-  const [galeri, setGaleri] = useState([]);
+  const [gallery, setGallery] = useState([]);
 
   useEffect(() => {
-    setGaleri(galeriData); // data statis dari JSON lokal
+    setGallery(galeriData); // static data from local JSON
   }, []);
 
   return (
@@ -18,15 +18,15 @@ const GalleryLanding = () => {
         className="text-center mb-10"
       >
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-2">
-          Galeri Kegiatan Kami
+          Our Activity Gallery
         </h1>
         <p className="text-gray-600 max-w-xl mx-auto">
-          Dokumentasi momen-momen berharga dalam kegiatan sosial, edukasi, dan kolaborasi kami.
+          A collection of memorable moments from our social, educational, and collaborative activities.
         </p>
       </motion.div>
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {galeri.map((item) => (
+        {gallery.map((item) => (
           <motion.div
             key={item.id}
             whileHover={{ scale: 1.05 }}
@@ -41,15 +41,16 @@ const GalleryLanding = () => {
           </motion.div>
         ))}
       </div>
-      <button className="flex justify-center">
+
+      <div className="flex justify-center">
         <a
-          onclick={() => window.scrollTo(0, 0)}
+          onClick={() => window.scrollTo(0, 0)}
           href="/galeri"
           className="mt-8 inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-700 transition-colors duration-300"
         >
-          Lihat Semua Galeri
+          View All Gallery
         </a>
-      </button>
+      </div>
     </div>
   );
 };
