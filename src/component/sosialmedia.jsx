@@ -1,25 +1,25 @@
-import { FaInstagram, FaFacebookF, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 const socialLinks = [
   {
     name: "Instagram",
     icon: <FaInstagram className="text-pink-500" />,
-    url: "https://instagram.com/",
+    url: "https://www.instagram.com/pt_shabi.lombok.bersaudara/",
   },
   {
     name: "Facebook",
     icon: <FaFacebookF className="text-blue-600" />,
-    url: "https://facebook.com/",
+    url: "https://www.facebook.com/profile.php?id=61556022470859",
   },
   {
     name: "TikTok",
     icon: <FaTiktok className="text-black" />,
-    url: "https://tiktok.com/",
+    url: "https://www.tiktok.com/@shabigroup",
   },
   {
-    name: "YouTube",
-    icon: <FaYoutube className="text-red-600" />,
-    url: "https://youtube.com/",
+    name: "WhatsApp",
+    icon: <FaWhatsapp className="text-green-500" />,
+    url: "https://wa.me/+6283825948215", // Ganti 'yourphonenumber' dengan nomor kamu (tanpa + dan spasi)
   },
 ];
 
