@@ -6,6 +6,7 @@ const Kerjsama = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <Navbar />
+            
             <div className="relative flex-grow">
                 {/* Full-screen background */}
                 <div
@@ -17,7 +18,6 @@ const Kerjsama = () => {
                         <h1 className="text-4xl text-yellow-500 font-bold font-primary flex justify-center">COLLABORATION</h1>
                     </div>
                     <div>
-
                     </div>
                     
                 </div>

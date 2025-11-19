@@ -35,6 +35,12 @@ const images = [
     description:
       "Singapore is known as a financial and business center in Southeast Asia. It offers employment opportunities in the domestic, construction, and service sectors. With a structured work system and multicultural environment, Singapore is an appealing choice for Indonesian migrant workers.",
   },
+  {
+    src: "/Country/koreaselatan.jpg",
+    name: "South Korea",
+    description:
+      "Korea, or more commonly known as South Korea, is a country in East Asia that is famous for its technological advancement, pop culture, and strong traditions. Its capital city is Seoul, one of the largest and most modern metropolitan cities in the world. The country has a unique blend of fast-paced modern life and well-preserved traditions such as the hanbok, hanok (traditional houses), and various cultural festivals.",
+  },
 ];
 
 export default images;

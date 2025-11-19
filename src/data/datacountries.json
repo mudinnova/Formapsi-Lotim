@@ -2,6 +2,7 @@
   "asia": [
     { "src": "/negara/taiwan.jpg", "country": "Taiwan" },
     { "src": "/negara/jepang.jpg", "country": "Jepang" },
+    { "src": "/negara/korea.jpg", "country": "South Korea" },
     { "src": "/negara/maldives.jpg", "country": "Maldives" },
     { "src": "/negara/malay.jpg", "country": "Malaysia" },
     { "src": "/negara/singapura.jpg", "country": "Singapura" },
